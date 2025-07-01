@@ -1,5 +1,5 @@
 import React from 'react';
-import './SaveTheDate.css';
+import './SaveTheDate.scss';
 
 export default function SaveTheDate() {
     return (
