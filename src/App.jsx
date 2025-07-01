@@ -9,8 +9,7 @@ function App() {
   return (
     <>
       <div>
-        {/* <SaveTheDate/> */}
-        <TestPage />
+        <SaveTheDate />
       </div>
     </>
   )
