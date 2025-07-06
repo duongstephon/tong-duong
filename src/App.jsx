@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import SaveTheDate from './Components/SaveTheDate/SaveTheDate'
+import Home from './Components/Home/Home'
 import './App.css'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div>
-         <SaveTheDate/>
+         <Home/>
       </div>
     </>
   )

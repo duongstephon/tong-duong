@@ -1,8 +1,8 @@
-@import '../../styles/_mixins.scss';
+@import '../../styles/mixins';
 
-.save-the-date {
+.thank-you {
   padding: 20px;
-  background: #fff8f0;
+  background: grey;
 
   h1 {
     font-size: 24px;
@@ -21,7 +21,7 @@
 
     h1 {
       font-size: 36px;
-      color: red;
+      color: blue;
     }
 
     p {
