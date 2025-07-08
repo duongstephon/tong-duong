@@ -1,10 +1,10 @@
 import React from 'react';
-import './SaveTheDate.scss';
+import '../../Components/SaveTheDate/SaveTheDate.scss'
 
 export default function SaveTheDate() {
     return (
     <div className="save-the-date">
-        <h1>This is My Save the Date</h1>
+        <h1>This is My Save The Date Email HTML</h1>
     </div>
     );
 }
