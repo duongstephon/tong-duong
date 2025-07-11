@@ -1,4 +1,4 @@
-@import '../../styles/_mixins.scss';
+@import '../../styles/mixins';
 
 .home {
   padding: 20px;
@@ -14,18 +14,18 @@
     color: #555;
   }
 
-@include desktop {
-    padding: 60px;
-    max-width: 900px;
-    margin: 0 auto;
+// @include desktop {
+//     padding: 60px;
+//     max-width: 900px;
+//     margin: 0 auto;
 
-    h1 {
-      font-size: 36px;
-      color: red;
-    }
+//     h1 {
+//       font-size: 36px;
+//       color: red;
+//     }
 
-    p {
-      font-size: 18px;
-    }
-  }
+//     p {
+//       font-size: 18px;
+//     }
+//   }
 }
