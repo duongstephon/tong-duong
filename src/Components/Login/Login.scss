@@ -1,42 +1,47 @@
-@import '../../styles/mixins';
+@import '../../styles/_mixins.scss';
 
 p {
     margin: 0;
 }
 
-.std {
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.login {
   font-family: 'Tan Angleton', serif;
   src: url(../../assets/fonts/TAN-Angleton-Regular.ttf) format('truetype');
-  background: url('../../assets/images/saveTheDateImg.jpg');
+  background: url('../../assets/images/loginIMG.jpg');
   background-size: cover;
   background-position: top;
-  background-repeat: no-repeat;
+//   background-repeat: no-repeat;
   width: 100vw;
-  height: 105vh;
+  height: 60vh;
   opacity: 75%;
-  padding: 5%;
-  align-items: center;
+  align-items: flex-start;
   color: white;
   display: flex;
   justify-content: center;
   text-align: center;
+  border-radius: 0 0 30px 30px;
 
   @include respond-to(tablet) {
     height: 100vh;
   }
 
   &__container {
-    height: 100vh;
+    height: 60vh;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.2);
+    // background-position: top;
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
-    border-radius: 5px;
+    border-radius: 0 0 30px 30px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    padding: 5%;
+    justify-content: center;
 
     @include respond-to(tablet) {
         height: 90vh;
@@ -47,24 +52,9 @@ p {
     }
   }
 
-  &__hero, &__sc, &__location-time {
+  &__sc, &__location-time {
     z-index: 3;
     text-align: center;
-  }
-
-  &__hero {
-    font-size: 3.5rem;
-    letter-spacing: 1px;
-    line-height: 1.1;
-
-    @include respond-to(tablet) {
-    font-size: 5rem;
-    }
-
-    @include respond-to(desktop) {
-        font-size: 7rem;
-        line-height: 0.9;
-    }
   }
 
   &__sc {
@@ -77,12 +67,11 @@ p {
 
     @include respond-to(desktop) {
         padding-bottom: 0;
-        // padding-top: 12%
     }
   }
 
   &__names {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     line-height: 1.1;
 
     @include respond-to(tablet) {
@@ -96,7 +85,7 @@ p {
   }
 
   &__announcement {
-    font-size: 1.3rem;
+    font-size: 1rem;
 
     @include respond-to(tablet) {
     font-size: 1.8rem;
@@ -122,4 +111,5 @@ p {
     }
   }
 }
+
 
