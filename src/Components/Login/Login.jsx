@@ -15,13 +15,10 @@ export default function Login() {
                 <p className="login__heading">We're thrilled you're here!</p>
                 <p className="login__description">Use the email where you received our invitation to log in.</p>
             </div>
+            <div>
+                <p>Email</p>
+            </div>
         </div>
     </div>
-
-    // <div> 
-    //     <div>
-    //         <p>We're thrilled you're here!</p>
-    //     </div>
-    // </div>
     );
 }
