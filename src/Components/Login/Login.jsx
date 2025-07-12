@@ -1,7 +1,31 @@
 import React from 'react';
 import './Login.scss';
+import { useState } from 'react';
+import { db } from '../../config/firebase-config';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 
 export default function Login() {
+    const [email, setEmail] = useState("");
+
+    const usersCollectionRef = collection(db, "Users");
+
+    const getUsersByEmail = async () => {
+        try {
+            const q = query(usersCollectionRef, where("email", "==", email));
+            const data = await getDocs(q);
+
+            const userData = data.docs.map((doc) => ({
+                ...doc.data(),
+                id: doc.id,
+            }));
+
+            console.log(userData);
+        } catch (err) {
+            console.error("Error fetching users by name:", err);
+        }
+    };
+
+
     return (
         <div className="login">
             <div className="login__container">
@@ -18,8 +42,8 @@ export default function Login() {
                 <div>
                     <label>Email</label>
                     <div className="login__heading">
-                        <input />
-                        <button>Submit</button>
+                        <input placeholder='Enter email...' onChange={(e) => setEmail(e.target.value)} />
+                        <button onClick={getUsersByEmail}>Submit</button>
                     </div>
                 </div>
             </div>
