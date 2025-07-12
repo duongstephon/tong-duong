@@ -19,6 +19,7 @@ body, html {
   width: 100vw;
   height: 55vh;
   opacity: 75%;
+  position: relative;
   // align-items: center;
   color: white;
   // display: flex;
@@ -98,15 +99,36 @@ body, html {
   }
 
   &__box {
-    color: red;
+    font-family: 'Proxima Nova', Regular;
+    src: url(../../assets/fonts/proximanova_regular.ttf) format('truetype');
     background-color: white;
-    padding: 2%;
+    padding: 10% 3%;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
+    width: 80%;
     max-width: 500px;
     text-align: center;
     margin: 1%;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  &__heading, &__description {
+    color: #6A6754;
+  }
+
+  &__heading {
+    font-weight: 600;
+    padding-bottom: 2%;
+    font-size: 1rem;
+  }
+
+  &__description {
+    font-size: 0.8rem;
   }
 }
 
