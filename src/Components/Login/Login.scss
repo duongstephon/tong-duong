@@ -1,10 +1,11 @@
 @use '../../styles/mixins' as *;
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
 }
@@ -44,15 +45,16 @@ body, html {
     // justify-content: flex-start;
 
     @include respond-to(tablet) {
-        height: 90vh;
+      height: 90vh;
     }
 
     @include respond-to(desktop) {
-        height: 90vh;
+      height: 90vh;
     }
   }
 
-  &__sc, &__location-time {
+  &__sc,
+  &__location-time {
     z-index: 3;
     text-align: center;
     letter-spacing: 1px;
@@ -63,12 +65,12 @@ body, html {
     padding-top: 20%;
 
     @include respond-to(tablet) {
-        padding-top: 10%;
-        padding-bottom: 30%;
+      padding-top: 10%;
+      padding-bottom: 30%;
     }
 
     @include respond-to(desktop) {
-        padding-bottom: 0;
+      padding-bottom: 0;
     }
   }
 
@@ -77,12 +79,12 @@ body, html {
     line-height: 1.1;
 
     @include respond-to(tablet) {
-    font-size: 2.5rem;
+      font-size: 2.5rem;
     }
 
     @include respond-to(desktop) {
-        font-size: 3.5rem;
-        line-height: 0.8;
+      font-size: 3.5rem;
+      line-height: 0.8;
     }
   }
 
@@ -90,11 +92,11 @@ body, html {
     font-size: 1rem;
 
     @include respond-to(tablet) {
-    font-size: 1.8rem;
+      font-size: 1.8rem;
     }
 
     @include respond-to(desktop) {
-    font-size: 2.5rem;
+      font-size: 2.5rem;
     }
   }
 
@@ -117,7 +119,8 @@ body, html {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   }
 
-  &__heading, &__description {
+  &__heading,
+  &__description {
     color: #6A6754;
   }
 
@@ -131,5 +134,3 @@ body, html {
     font-size: 0.8rem;
   }
 }
-
-
