@@ -4,9 +4,15 @@ p {
     margin: 0;
 }
 
+@font-face {
+  font-family: 'Tan Angleton';
+  src: url('../../assets/fonts/TAN-Angleton-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .std {
   font-family: 'Tan Angleton', serif;
-  src: url(../../assets/fonts/TAN-Angleton-Regular.ttf) format('truetype');
   background: url('../../assets/images/saveTheDateImg.jpg');
   background-size: cover;
   background-position: top;

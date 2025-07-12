@@ -1,0 +1,113 @@
+@use '../../styles/mixins' as *;
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #6A6754;
+    font-size: 0.8rem;
+}
+
+@font-face {
+  font-family: 'Biro Script';
+  src: url('../../assets/fonts/Biro_Script_reduced.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Tan Angleton';
+  src: url('../../assets/fonts/TAN-Angleton-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navbar {
+    display: flex;
+
+    &__logo {
+        display: none;
+    }
+
+    &__hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 18px;
+      z-index: 110;
+      padding-top: 3%;
+      padding-left: 3%;    
+
+      span {
+        height: 3px;
+        background: #6A6754;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      &.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      &.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      &.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+
+    &__welcome, &__menu {
+        color: #6A6754;
+    }
+
+    &__welcome {
+        font-family: 'Biro Script', cursive;
+        font-size: 1.8rem;
+    }
+
+    &__menu {
+      font-family: 'Tan Angleton', Regular;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      background:#ECECE2;
+      padding: 4rem 3rem 4rem 2rem;
+      gap: 1rem;
+      transform: translateY(-200%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      z-index: 90;
+
+
+      &.show {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @include respond-to(tablet) {
+    position: relative;
+    padding: 1rem 2rem;
+    background-color: red;
+    z-index: 100;
+
+    &__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    }
+
+    &__hamburger {
+    display: none;
+    }
+
+    &__menu {
+    display: flex;
+    gap: 2rem;
+    }
+    }
+}
