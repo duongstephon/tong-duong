@@ -7,7 +7,6 @@ p {
 a {
     text-decoration: none;
     color: #6A6754;
-    font-size: 0.8rem;
 }
 
 @font-face {
@@ -26,6 +25,16 @@ a {
 
 .navbar {
     display: flex;
+    position: fixed;
+    z-index: 10;
+
+    @include respond-to(tablet) {
+        display: none;
+    }
+
+    @include respond-to(desktop) {
+        display: none;
+    }
 
     &__logo {
         display: none;
@@ -38,8 +47,9 @@ a {
       width: 25px;
       height: 18px;
       z-index: 110;
-      padding-top: 3%;
-      padding-left: 3%;    
+      margin-top: 30%;
+      margin-left: 20%;
+
 
       span {
         height: 3px;
@@ -59,6 +69,10 @@ a {
       &.open span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
       }
+
+      @include respond-to(tablet) {
+        display: none;
+      }
     }
 
     &__welcome, &__menu {
@@ -67,7 +81,9 @@ a {
 
     &__welcome {
         font-family: 'Biro Script', cursive;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        white-space: nowrap;
+
     }
 
     &__menu {
@@ -76,38 +92,22 @@ a {
       flex-direction: column;
       position: absolute;
       background:#ECECE2;
-      padding: 4rem 3rem 4rem 2rem;
-      gap: 1rem;
+      padding: 4rem 5rem 10rem 2rem;
+      gap: 1.5rem;
       transform: translateY(-200%);
       opacity: 0;
       transition: transform 0.3s ease, opacity 0.3s ease;
       z-index: 90;
 
-
       &.show {
         transform: translateY(0);
         opacity: 1;
       }
-    }
 
-    @include respond-to(tablet) {
-    position: relative;
-    padding: 1rem 2rem;
-    background-color: red;
-    z-index: 100;
-
-    &__logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+      a {
+        font-size: 0.8rem;
+        white-space: nowrap;
+      }
     }
-
-    &__hamburger {
-    display: none;
-    }
-
-    &__menu {
-    display: flex;
-    gap: 2rem;
-    }
-    }
+    
 }

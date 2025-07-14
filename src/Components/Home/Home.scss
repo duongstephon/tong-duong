@@ -1,31 +1,111 @@
-// @use '../../styles/mixins' as *;
+@use '../../styles/mixins' as *;
 
-// // .home {
-// //   padding: 20px;
-// //   background: #fff8f0;
+p {
+    margin: 0;
+}
 
-// //   h1 {
-// //     font-size: 24px;
-// //     color: #333;
-// //   }
+@font-face {
+  font-family: 'Biro Script';
+  src: url('../../assets/fonts/Biro_Script_reduced.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-// //   p {
-// //     font-size: 16px;
-// //     color: #555;
-// //   }
+@font-face {
+  font-family: 'Tan Angleton';
+  src: url('../../assets/fonts/TAN-Angleton-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-// // @include desktop {
-// //     padding: 60px;
-// //     max-width: 900px;
-// //     margin: 0 auto;
+.home {
+  background: url('../../assets/images/hero.JPG');
+  background-size: cover;
+  background-position: 25% center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.75;
 
-// //     h1 {
-// //       font-size: 36px;
-// //       color: red;
-// //     }
+  &__welcome {
+  font-family: 'Biro Script';
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;  
+  padding-top: 20%;
+  color: #6A6754;
+  font-size: 1.5rem;
 
-// //     p {
-// //       font-size: 18px;
-// //     }
-// //   }
-// }
+  @include respond-to(tablet) {
+    padding-top: 8%;
+  }
+
+  @include respond-to(desktop) {
+    padding-top: 6%;
+  }
+  }
+
+&__sc {
+    font-family: 'Tan Angleton';
+    color: white;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;  
+    padding-top: 75%;
+
+    @include respond-to(tablet) {
+    }
+
+    @include respond-to(desktop) {
+    }
+  }
+
+  &__names {
+    font-size: 1.5rem;
+    line-height: 1.6;
+
+    @include respond-to(tablet) {
+    }
+
+    @include respond-to(desktop) {
+    }
+  }
+
+  &__announcement {
+    font-size: 0.9rem;
+
+    @include respond-to(tablet) {
+    font-size: 1.8rem;
+    }
+
+    @include respond-to(desktop) {
+    font-size: 2.5rem;
+    }
+  }
+
+
+&__location-time {
+    font-family: 'Tan Angleton';
+    color: white;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;  
+    padding-top: 90%;
+    font-size: 0.8rem;
+
+    @include respond-to(tablet) {
+        font-size: 1.3rem;
+    }
+
+    @include respond-to(desktop) {
+        font-size: 2rem;
+        padding-top: 10%;
+        line-height: 1.1;
+    }
+}
+}
+
+
+
+
