@@ -4,6 +4,7 @@ import './App.css'
 import SaveTheDate from './Components/SaveTheDate/SaveTheDate'
 import Login from './Components/Login/Login'
 import Navbar from './Components/Navbar/Navbar'
+import Navigation from './Components/Navigation/Navigation'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +13,8 @@ function App() {
     <>
       <div>
         <Navbar/>
-         {/* <Home/> */}
+        <Navigation/>
+         <Home/>
          {/* <SaveTheDate/> */}
          {/* <Login/> */}
       </div>

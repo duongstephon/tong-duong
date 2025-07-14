@@ -6,8 +6,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      {/* <div className="navbar__logo">Our Wedding</div> */}
-
+      <div className="navbar__logo">Our Wedding</div>
       <div 
         className={`navbar__hamburger ${menuOpen ? 'open' : ''}`}
         onClick={() => setMenuOpen(!menuOpen)}
@@ -24,8 +23,8 @@ export default function Navbar() {
         </div>
         <p><a href="#home">Home</a></p>
         <p><a href="#thankyou">Thank You</a></p>
-        <p><a href="#details">Wedding Details</a></p>
-        <p><a href="#story">Our Story</a></p>
+        <p><a href="#weddingdetails">Wedding Details</a></p>
+        <p><a href="#ourstory">Our Story</a></p>
         <p><a href="#faq">FAQ</a></p>
         <p><a href="#rsvp">RSVP</a></p>
       </div>
