@@ -59,7 +59,7 @@ p {
     }
 
     @include respond-to(desktop) {
-        padding-top: 15.5rem;
+        padding-top: 15rem;
     }
   }
 
@@ -73,7 +73,6 @@ p {
 
     @include respond-to(desktop) {
         font-size: 1.9rem;
-        line-height: 1.5;
     }
 
   }
@@ -107,8 +106,7 @@ p {
 
     @include respond-to(desktop) {
         font-size: 1rem;
-        padding-top: 16rem;
-        line-height: 1.8;
+        padding-top: 17rem;
     }
 }
 }
