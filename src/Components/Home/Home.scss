@@ -33,16 +33,16 @@ p {
   justify-content: center;
   align-items: flex-start;
   text-align: center;  
-  padding-top: 20%;
+  padding-top: 3rem;
   color: #6A6754;
   font-size: 1.5rem;
 
   @include respond-to(tablet) {
-    padding-top: 8%;
+    padding-top: 4rem;
   }
 
   @include respond-to(desktop) {
-    padding-top: 6%;
+    padding-top: 4rem;
   }
   }
 
@@ -52,12 +52,14 @@ p {
     justify-content: center;
     align-items: flex-start;
     text-align: center;  
-    padding-top: 75%;
+    padding-top: 16rem;
 
     @include respond-to(tablet) {
+        padding-top: 15rem;
     }
 
     @include respond-to(desktop) {
+        padding-top: 15.5rem;
     }
   }
 
@@ -66,21 +68,25 @@ p {
     line-height: 1.6;
 
     @include respond-to(tablet) {
+        font-size: 1.9rem;
     }
 
     @include respond-to(desktop) {
+        font-size: 1.9rem;
+        line-height: 1.5;
     }
+
   }
 
   &__announcement {
     font-size: 0.9rem;
 
     @include respond-to(tablet) {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     }
 
     @include respond-to(desktop) {
-    font-size: 2.5rem;
+    font-size: 1.2rem;
     }
   }
 
@@ -91,17 +97,18 @@ p {
     justify-content: center;
     align-items: flex-end;
     text-align: center;  
-    padding-top: 90%;
+    padding-top: 18rem;
     font-size: 0.8rem;
 
     @include respond-to(tablet) {
-        font-size: 1.3rem;
+        font-size: 1rem;
+        padding-top: 17rem;
     }
 
     @include respond-to(desktop) {
-        font-size: 2rem;
-        padding-top: 10%;
-        line-height: 1.1;
+        font-size: 1rem;
+        padding-top: 16rem;
+        line-height: 1.8;
     }
 }
 }
