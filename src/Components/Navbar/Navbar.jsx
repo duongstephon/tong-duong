@@ -1,5 +1,6 @@
 import './Navbar.scss';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,8 +22,10 @@ export default function Navbar() {
         <div className="navbar__welcome">
             <p>Welcome, #name</p>
         </div>
-        <p><a href="#home">Home</a></p>
-        <p><a href="#thankyou">Thank You</a></p>
+        {/* <p><a href="#home">Home</a></p> */}
+        <Link to="/">Home</Link>
+        <Link to="/thankyou">Thank You</Link>
+        {/* <p><a href="#thankyou">Thank You</a></p> */}
         <p><a href="#weddingdetails">Wedding Details</a></p>
         <p><a href="#ourstory">Our Story</a></p>
         <p><a href="#faq">FAQ</a></p>
