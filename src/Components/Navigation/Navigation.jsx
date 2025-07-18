@@ -19,7 +19,8 @@ export default function Navigation() {
         </div>
         {/* right navigation links */}
          <div className="navigation__links navigation__links--right">
-          <p><a href="#ourstory">Our Story</a></p>
+          <Link to="/ourstory">Our Story</Link>
+          {/* <p><a href="#ourstory">Our Story</a></p> */}
           <p><a href="#faq">FAQ</a></p>
           <p><a href="#rsvp">RSVP</a></p>
         </div>
