@@ -26,8 +26,9 @@ export default function Navbar() {
         <Link to="/">Home</Link>
         <Link to="/thankyou">Thank You</Link>
         {/* <p><a href="#thankyou">Thank You</a></p> */}
+        <Link to="/ourstory">Our Story</Link>
         <p><a href="#weddingdetails">Wedding Details</a></p>
-        <p><a href="#ourstory">Our Story</a></p>
+        {/* <p><a href="#ourstory">Our Story</a></p> */}
         <p><a href="#faq">FAQ</a></p>
         <p><a href="#rsvp">RSVP</a></p>
       </div>

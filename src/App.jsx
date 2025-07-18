@@ -7,6 +7,7 @@ import Login from './Components/Login/Login'
 import Navbar from './Components/Navbar/Navbar'
 import Navigation from './Components/Navigation/Navigation'
 import ThankYou from './Components/ThankYou/ThankYou'
+import OurStory from './Components/OurStory/OurStory';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/thankyou" element={<ThankYou />} />
+        <Route path="/ourstory" element={<OurStory />} />
       </Routes>
     </Router>
     </>
