@@ -23,10 +23,10 @@ export default function Navbar() {
             <p>Welcome, #name</p>
         </div>
         {/* <p><a href="#home">Home</a></p> */}
-        <Link to="/">Home</Link>
-        <Link to="/thankyou">Thank You</Link>
+        <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+        <Link to="/thankyou" onClick={() => setMenuOpen(false)}>Thank You</Link>
         {/* <p><a href="#thankyou">Thank You</a></p> */}
-        <Link to="/ourstory">Our Story</Link>
+        <Link to="/ourstory" onClick={() => setMenuOpen(false)}>Our Story</Link>
         <p><a href="#weddingdetails">Wedding Details</a></p>
         {/* <p><a href="#ourstory">Our Story</a></p> */}
         <p><a href="#faq">FAQ</a></p>
