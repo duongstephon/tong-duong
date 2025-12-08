@@ -15,19 +15,29 @@ export default function EmailInvite() {
       </div>
       <div className="email__image">
         <img src={InviteImage} alt="Invite Image" />
-        <div className="email__image--overlay">
-          <p className="email__welcome">Welcome, [FirstName]</p>
-          <p className="email__message">
-            We would be thrilled to celebrate this special day with you.
-          </p>
-          <button className="email__button">SAVE THE DATE</button>
-        </div>
       </div>
-      <p className="email__formal">Formal invitation to follow</p>
+      <div className="email__details">
+        <p className="email__para">
+          We’re so thankful for the memories, the laughter, and the love we’ve
+          shared with you over the years. It means the world to have you with us
+          on this special day. This is a moment we’ll cherish forever. Kindly
+          mark your calendars. For a little peek at what’s coming, visit:&nbsp;
+          <a href="https://stephonandchelsia.ca/" target="_blank">
+            <em>stephonandchelsia.ca</em>
+          </a>
+        </p>
+        <p className="email__sig">
+          With love, <br /> Stephon and Chelsia
+        </p>
+      </div>
       <div className="email__footer">
         <hr className="email__line" />
+        <p className="email__formal">Formal invitation to follow</p>
         <p className="email__emailus">
-          If you have questions, kindly email us at stephonandchelsia@gmail.com
+          If you have questions, kindly email us at{" "}
+          <a href="mailto:stephonandchelsia@gmail.com">
+            <b>stephonandchelsia@gmail.com</b>
+          </a>
         </p>
       </div>
     </div>

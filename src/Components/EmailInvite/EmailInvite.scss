@@ -53,6 +53,10 @@
     color: #6a6754;
     padding-bottom: 0.7rem;
     font-family: "Tan Angleton";
+
+    @include respond-to(desktop) {
+      font-size: 1.3rem;
+    }
   }
 
   &__line {
@@ -60,6 +64,10 @@
     border-top: 1px solid #6a6754;
     width: 80vw;
     margin: 0;
+
+    @include respond-to(desktop) {
+      width: 50vw;
+    }
   }
 
   &__sc {
@@ -69,10 +77,18 @@
   &__names {
     font-size: 1em;
     line-height: 1.6;
+
+    @include respond-to(desktop) {
+      font-size: 1.2em;
+    }
   }
 
   &__announcement {
     font-size: 0.7em;
+
+    @include respond-to(desktop) {
+      font-size: 1.1em;
+    }
   }
 
   &__image {
@@ -83,63 +99,89 @@
     padding-bottom: 1rem;
     position: relative;
 
+    @include respond-to(desktop) {
+      width: 50%;
+    }
+
     img {
       max-width: 100%;
       height: auto;
       border-radius: 5px;
       display: block;
     }
-
-    &--overlay {
-      position: absolute;
-      top: 5%;
-      left: 5%;
-      width: 90%;
-      height: 85%;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 5px;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-evenly;
-      text-align: center;
-      color: #fff;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-  }
-
-  &__welcome {
-    font-size: 1.2em;
-    font-family: "Biro Script";
-  }
-
-  &__message {
-    font-size: 0.8em;
-    line-height: 1.5;
-    padding: 0 0.4rem;
-  }
-
-  &__button {
-    font-size: 0.7em;
-    font-family: "Tan Angleton";
-    background-color: #f7f7eb;
-    color: #6a6754;
-    border: none;
-    padding: 0.5rem 0.7rem;
-    cursor: pointer;
-    border-radius: 10px;
   }
 
   &__formal {
     font-size: 0.6em;
-    padding-bottom: 1.3rem;
+    padding-bottom: 5%;
+    padding-top: 5%;
+
+    @include respond-to(tablet) {
+      padding: 3% 0;
+      font-size: 0.6em;
+    }
+
+    @include respond-to(desktop) {
+      padding: 2% 0 1%;
+      font-size: 0.8em;
+    }
+  }
+
+  &__details {
+    padding: 5% 10%;
+
+    @include respond-to(tablet) {
+      padding-bottom: 0%;
+      padding-top: 3%;
+    }
+
+    @include respond-to(desktop) {
+      padding: 2% 25%;
+    }
+  }
+
+  &__para {
+    font-size: 0.75rem;
+    padding-bottom: 10%;
+    text-align: left;
+
+    @include respond-to(tablet) {
+      padding-bottom: 5%;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 0.9rem;
+      padding-bottom: 4%;
+    }
+  }
+
+  &__sig {
+    padding-bottom: 10%;
+    font-size: 0.75rem;
+    text-align: left;
+
+    @include respond-to(tablet) {
+      padding-bottom: 5%;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 0.9rem;
+      padding-bottom: 3%;
+    }
   }
 
   &__emailus {
     font-size: 0.5em;
     margin: 0 1rem;
     padding: 0.7rem 1.5rem 1rem;
+
+    @include respond-to(tablet) {
+      padding: 0rem 1.8rem 1rem;
+      font-size: 0.6em;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 0.8em;
+    }
   }
 }
