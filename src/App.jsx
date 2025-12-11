@@ -18,12 +18,12 @@ function App() {
       <Router>
         {/* <Navbar />
         <Navigation /> */}
-        {/* <SaveTheDate /> */}
         <Routes>
           <Route path="/invite" element={<EmailInvite />} />
           {/* <Route path="/" element={<Home />} />
           <Route path="/thankyou" element={<ThankYou />} />
           <Route path="/ourstory" element={<OurStory />} /> */}
+          <Route path="/savethedate" element={<SaveTheDate />} />
         </Routes>
       </Router>
     </>
