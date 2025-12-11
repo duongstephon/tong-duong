@@ -19,6 +19,7 @@ function App() {
         {/* <Navbar />
         <Navigation /> */}
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route path="/invite" element={<EmailInvite />} />
           {/* <Route path="/" element={<Home />} />
           <Route path="/thankyou" element={<ThankYou />} />
