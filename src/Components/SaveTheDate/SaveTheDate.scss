@@ -1,14 +1,10 @@
 @use "../../styles/mixins" as *;
 
-// p {
-//   margin: 0;
-// }
-
 body,
 html {
   margin: 0;
   padding: 0;
-  overflow: hidden; // prevents page scrolling
+  overflow: hidden;
 }
 
 @font-face {
@@ -27,17 +23,11 @@ html {
   width: 100%;
   height: 100vh;
   opacity: 0.75;
-  // padding: 10% 0;
   align-items: center;
   color: white;
   display: flex;
   justify-content: center;
   text-align: center;
-
-  // @include respond-to(desktop) {
-  //   height: 83vh;
-  //   width: 90vw;
-  // }
 
   &__container {
     height: 95vh;
@@ -54,10 +44,12 @@ html {
     @include respond-to(tablet) {
       height: 85vh;
       width: 80vw;
+      padding: 3% 0;
     }
 
     @include respond-to(desktop) {
-      height: 90vh;
+      height: 85vh;
+      padding-bottom: 2%;
     }
   }
 
@@ -78,7 +70,8 @@ html {
     }
 
     @include respond-to(desktop) {
-      font-size: 3rem;
+      font-size: clamp(16px, 4.5vw, 70px);
+      padding-top: 5%;
     }
 
     &--break {
@@ -98,7 +91,7 @@ html {
 
     @include respond-to(desktop) {
       padding-bottom: 0;
-      padding-top: 10%;
+      padding-top: 5%;
     }
   }
 
@@ -111,7 +104,7 @@ html {
     }
 
     @include respond-to(desktop) {
-      font-size: 2rem;
+      font-size: clamp(16px, 2.5vw, 38px);
       line-height: 1.5;
     }
   }
@@ -124,7 +117,7 @@ html {
     }
 
     @include respond-to(desktop) {
-      font-size: 1.6rem;
+      font-size: clamp(16px, 2.5vw, 38px);
     }
   }
 
@@ -138,7 +131,7 @@ html {
     }
 
     @include respond-to(desktop) {
-      font-size: 1.5rem;
+      font-size: clamp(16px, 2vw, 26px);
       padding-top: 10%;
       line-height: 1.8;
     }
