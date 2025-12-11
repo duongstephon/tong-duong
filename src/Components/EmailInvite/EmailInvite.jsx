@@ -20,15 +20,16 @@ export default function EmailInvite() {
         <p className="email__para">
           We’re so thankful for the memories, the laughter, and the love we’ve
           shared with you over the years. It means the world to have you with us
-          on this special day. This is a moment we’ll cherish forever. Kindly
-          mark your calendars. For a little peek at what’s coming, visit:&nbsp;
-          <a href="https://stephonandchelsia.ca/" target="_blank">
-            <em>stephonandchelsia.ca</em>
-          </a>
+          on this special day. This is a moment we’ll cherish forever.
         </p>
         <p className="email__sig">
           With love, <br /> Stephon and Chelsia
         </p>
+      </div>
+      <div className="email__button">
+        <a href="https://stephonandchelsia.ca">
+          <button>SAVE THE DATE</button>
+        </a>
       </div>
       <div className="email__footer">
         <hr className="email__line" />
@@ -36,7 +37,7 @@ export default function EmailInvite() {
         <p className="email__emailus">
           If you have questions, kindly email us at{" "}
           <a href="mailto:stephonandchelsia@gmail.com">
-            <b>stephonandchelsia@gmail.com</b>
+            stephonandchelsia@gmail.com
           </a>
         </p>
       </div>

@@ -9,8 +9,8 @@ export default function SaveTheDate() {
         <div className="std__hero">
           <p>
             SAVE THE
-            <br />
-            DATE
+            <br className="std__hero--break" />
+            &nbsp;DATE
           </p>
         </div>
         <div className="std__sc">

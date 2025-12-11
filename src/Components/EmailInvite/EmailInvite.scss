@@ -100,7 +100,7 @@
     position: relative;
 
     @include respond-to(desktop) {
-      width: 50%;
+      width: 40%;
     }
 
     img {
@@ -123,20 +123,20 @@
 
     @include respond-to(desktop) {
       padding: 2% 0 1%;
-      font-size: 0.8em;
+      font-size: 0.7em;
     }
   }
 
   &__details {
-    padding: 5% 10%;
+    padding: 3% 10% 0;
 
     @include respond-to(tablet) {
       padding-bottom: 0%;
-      padding-top: 3%;
+      padding-top: 2%;
     }
 
     @include respond-to(desktop) {
-      padding: 2% 25%;
+      padding: 1% 30% 1%;
     }
   }
 
@@ -156,7 +156,7 @@
   }
 
   &__sig {
-    padding-bottom: 10%;
+    padding-bottom: 8%;
     font-size: 0.75rem;
     text-align: left;
 
@@ -166,8 +166,51 @@
 
     @include respond-to(desktop) {
       font-size: 0.9rem;
-      padding-bottom: 3%;
+      padding-bottom: 2%;
     }
+  }
+
+  &__button {
+    width: 80%;
+    display: block !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    padding-bottom: 8%;
+
+    @include respond-to(tablet) {
+      padding-bottom: 5%;
+    }
+
+    @include respond-to(desktop) {
+      width: 40%;
+      padding-bottom: 2%;
+    }
+  }
+
+  &__button button {
+    background-color: #6a6754;
+    color: #ffffff;
+    font-family: "Tan Angleton";
+    padding: 5% 10%;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+
+    @include respond-to(tablet) {
+      font-size: 0.8rem;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__button a,
+  &__button button {
+    margin: 0 !important;
+    display: inline-block;
   }
 
   &__emailus {
@@ -181,7 +224,7 @@
     }
 
     @include respond-to(desktop) {
-      font-size: 0.8em;
+      font-size: 0.7em;
     }
   }
 }
