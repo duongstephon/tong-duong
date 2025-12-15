@@ -19,12 +19,12 @@ function App() {
         {/* <Navbar />
         <Navigation /> */}
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/invite" element={<EmailInvite />} />
           {/* <Route path="/" element={<Home />} />
           <Route path="/thankyou" element={<ThankYou />} />
           <Route path="/ourstory" element={<OurStory />} /> */}
-          <Route path="/savethedate" element={<SaveTheDate />} />
+          <Route path="/savethedate/:id" element={<SaveTheDate />} />
         </Routes>
       </Router>
     </>

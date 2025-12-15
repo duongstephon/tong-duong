@@ -1,11 +1,12 @@
 import React from 'react';
 import './Login.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { db } from '../../config/firebase-config';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 
 export default function Login() {
     const [email, setEmail] = useState("");
+    const [emailError, setEmailError] = useState(false)
 
     const usersCollectionRef = collection(db, "Users");
 
@@ -19,7 +20,13 @@ export default function Login() {
                 id: doc.id,
             }));
 
-            console.log(userData);
+            if (userData.length > 0) {
+                setEmail("")
+                window.location.href = `/savethedate/${encodeURIComponent(userData[0].email)}`;
+            } else {
+                setEmailError(true)
+            }
+
         } catch (err) {
             console.error("Error fetching users by name:", err);
         }
@@ -42,9 +49,13 @@ export default function Login() {
                 <div>
                     <label>Email</label>
                     <div className="login__heading">
-                        <input placeholder='Enter email...' onChange={(e) => setEmail(e.target.value)} />
+                        <input placeholder='Enter email...' onChange={(e) => setEmail(e.target.value)} value={email} />
                         <button onClick={getUsersByEmail}>Submit</button>
                     </div>
+                    {emailError &&
+                        <div>
+                            <p>Oops! That email isn't on our guest list. Please try again or contact us if you think this is a mistake.</p>
+                        </div>}
                 </div>
             </div>
         </div>
