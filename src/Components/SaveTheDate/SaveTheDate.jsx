@@ -1,17 +1,15 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../Components/SaveTheDate/SaveTheDate.scss";
 import { useParams } from "react-router-dom";
 import { db } from "../../config/firebase-config";
 import { collection, query, where, getDocs } from "firebase/firestore";
+import SaveTheDateImg from "../../assets/images/saveTheDateImg.jpg"; // import image
 
 export default function SaveTheDate() {
   const { email } = useParams();
   const [valid, setValid] = useState(false);
   const [loaded, setLoaded] = useState(false);
-
   const decodedEmail = decodeURIComponent(email);
-
   const usersCollectionRef = collection(db, "Users");
 
   useEffect(() => {
@@ -19,7 +17,6 @@ export default function SaveTheDate() {
       try {
         const q = query(usersCollectionRef, where("email", "==", decodedEmail));
         const data = await getDocs(q);
-
         const userData = data.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
@@ -37,39 +34,40 @@ export default function SaveTheDate() {
         console.error("Error fetching users by name:", err);
       }
     };
-
     getUsersByEmail();
   }, []);
 
-  if (loaded) {
-    if (valid) {
-      return (
-        <div className="std">
-          <div className="std__container">
-            <div className="std__hero">
-              <p>
-                SAVE THE
-                <br className="std__hero--break" />
-                &nbsp;DATE
-              </p>
-            </div>
-            <div className="std__sc">
-              <p className="std__names">Stephon & Chelsia</p>
-              <p className="std__announcement">ARE GETTING MARRIED!</p>
-            </div>
-            <div className="std__location-time">
-              <p>
-                NORTH YORK, ONTARIO <br />
-                SUNDAY, SEPTEMBER 6, 2026
-              </p>
-            </div>
-          </div>
+  if (!loaded) return <div></div>;
+  if (!valid) return <div></div>;
+
+  return (
+    <div
+      className="std"
+      style={{
+        backgroundImage: `url(${SaveTheDateImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "top",
+      }}
+    >
+      <div className="std__container">
+        <div className="std__hero">
+          <p>
+            SAVE THE
+            <br className="std__hero--break" />
+            &nbsp;DATE
+          </p>
         </div>
-      );
-    } else {
-      return <div></div>;
-    }
-  } else {
-    return <div></div>;
-  }
+        <div className="std__sc">
+          <p className="std__names">Stephon & Chelsia</p>
+          <p className="std__announcement">ARE GETTING MARRIED!</p>
+        </div>
+        <div className="std__location-time">
+          <p>
+            NORTH YORK, ONTARIO <br />
+            SUNDAY, SEPTEMBER 6, 2026
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 }
