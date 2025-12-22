@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import "./App.css";
-import EmailInvite from "./Components/EmailInvite/EmailInvite";
+// import EmailInvite from "./Components/EmailInvite/EmailInvite";
 import SaveTheDate from "./Components/SaveTheDate/SaveTheDate";
 import Login from "./Components/Login/Login";
 import Navbar from "./Components/Navbar/Navbar";
@@ -18,7 +18,7 @@ function App() {
         <Navigation /> */}
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/invite" element={<EmailInvite />} />
+          {/* <Route path="/invite" element={<EmailInvite />} /> */}
           {/* <Route path="/" element={<Home />} />
           <Route path="/thankyou" element={<ThankYou />} />
           <Route path="/ourstory" element={<OurStory />} /> */}
