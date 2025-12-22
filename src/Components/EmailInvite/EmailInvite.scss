@@ -1,230 +1,230 @@
-@use "../../styles/mixins" as *;
+// @use "../../styles/mixins" as *;
 
-// p {
-//   margin: 0;
+// // p {
+// //   margin: 0;
+// // }
+
+// // body,
+// // html {
+// //   margin: 2rem;
+// //   padding: 0;
+// // }
+
+// @font-face {
+//   font-family: "Tan Angleton";
+//   src: url("../../assets/fonts/TAN-Angleton-Regular.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
 // }
 
-// body,
-// html {
-//   margin: 2rem;
-//   padding: 0;
+// @font-face {
+//   font-family: "Proxima Nova";
+//   src: url("../../assets/fonts/proximanova_regular.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
 // }
 
-@font-face {
-  font-family: "Tan Angleton";
-  src: url("../../assets/fonts/TAN-Angleton-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: "Biro Script";
+//   src: url("../../assets/fonts/Biro_Script_reduced.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
-@font-face {
-  font-family: "Proxima Nova";
-  src: url("../../assets/fonts/proximanova_regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+// .email {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   text-align: center;
+//   width: 100%;
+//   margin: 2rem auto;
+//   font-family: "Tan Angleton";
+//   color: #6a6754;
 
-@font-face {
-  font-family: "Biro Script";
-  src: url("../../assets/fonts/Biro_Script_reduced.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+//   &_header,
+//   &__footer {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//   }
 
-.email {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  margin: 2rem auto;
-  font-family: "Tan Angleton";
-  color: #6a6754;
+//   &__logo {
+//     color: #6a6754;
+//     padding-bottom: 0.7rem;
+//     font-family: "Tan Angleton";
 
-  &_header,
-  &__footer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+//     @include respond-to(desktop) {
+//       font-size: 1.3rem;
+//     }
+//   }
 
-  &__logo {
-    color: #6a6754;
-    padding-bottom: 0.7rem;
-    font-family: "Tan Angleton";
+//   &__line {
+//     border: none;
+//     border-top: 1px solid #6a6754;
+//     width: 80vw;
+//     margin: 0;
 
-    @include respond-to(desktop) {
-      font-size: 1.3rem;
-    }
-  }
+//     @include respond-to(desktop) {
+//       width: 50vw;
+//     }
+//   }
 
-  &__line {
-    border: none;
-    border-top: 1px solid #6a6754;
-    width: 80vw;
-    margin: 0;
+//   &__sc {
+//     margin: 2rem 0;
+//   }
 
-    @include respond-to(desktop) {
-      width: 50vw;
-    }
-  }
+//   &__names {
+//     font-size: 1em;
+//     line-height: 1.6;
 
-  &__sc {
-    margin: 2rem 0;
-  }
+//     @include respond-to(desktop) {
+//       font-size: 1.2em;
+//     }
+//   }
 
-  &__names {
-    font-size: 1em;
-    line-height: 1.6;
+//   &__announcement {
+//     font-size: 0.7em;
 
-    @include respond-to(desktop) {
-      font-size: 1.2em;
-    }
-  }
+//     @include respond-to(desktop) {
+//       font-size: 1.1em;
+//     }
+//   }
 
-  &__announcement {
-    font-size: 0.7em;
+//   &__image {
+//     width: 80%;
+//     display: flex;
+//     justify-content: center;
+//     opacity: 75%;
+//     padding-bottom: 1rem;
+//     position: relative;
 
-    @include respond-to(desktop) {
-      font-size: 1.1em;
-    }
-  }
+//     @include respond-to(desktop) {
+//       width: 40%;
+//     }
 
-  &__image {
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    opacity: 75%;
-    padding-bottom: 1rem;
-    position: relative;
+//     img {
+//       max-width: 100%;
+//       height: auto;
+//       border-radius: 5px;
+//       display: block;
+//     }
+//   }
 
-    @include respond-to(desktop) {
-      width: 40%;
-    }
+//   &__formal {
+//     font-size: 0.6em;
+//     padding-bottom: 5%;
+//     padding-top: 5%;
 
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
-      display: block;
-    }
-  }
+//     @include respond-to(tablet) {
+//       padding: 3% 0;
+//       font-size: 0.6em;
+//     }
 
-  &__formal {
-    font-size: 0.6em;
-    padding-bottom: 5%;
-    padding-top: 5%;
+//     @include respond-to(desktop) {
+//       padding: 2% 0 1%;
+//       font-size: 0.7em;
+//     }
+//   }
 
-    @include respond-to(tablet) {
-      padding: 3% 0;
-      font-size: 0.6em;
-    }
+//   &__details {
+//     padding: 3% 10% 0;
 
-    @include respond-to(desktop) {
-      padding: 2% 0 1%;
-      font-size: 0.7em;
-    }
-  }
+//     @include respond-to(tablet) {
+//       padding-bottom: 0%;
+//       padding-top: 2%;
+//     }
 
-  &__details {
-    padding: 3% 10% 0;
+//     @include respond-to(desktop) {
+//       padding: 1% 30% 1%;
+//     }
+//   }
 
-    @include respond-to(tablet) {
-      padding-bottom: 0%;
-      padding-top: 2%;
-    }
+//   &__para {
+//     font-size: 0.75rem;
+//     padding-bottom: 10%;
+//     text-align: left;
 
-    @include respond-to(desktop) {
-      padding: 1% 30% 1%;
-    }
-  }
+//     @include respond-to(tablet) {
+//       padding-bottom: 5%;
+//     }
 
-  &__para {
-    font-size: 0.75rem;
-    padding-bottom: 10%;
-    text-align: left;
+//     @include respond-to(desktop) {
+//       font-size: 0.9rem;
+//       padding-bottom: 4%;
+//     }
+//   }
 
-    @include respond-to(tablet) {
-      padding-bottom: 5%;
-    }
+//   &__sig {
+//     padding-bottom: 8%;
+//     font-size: 0.75rem;
+//     text-align: left;
 
-    @include respond-to(desktop) {
-      font-size: 0.9rem;
-      padding-bottom: 4%;
-    }
-  }
+//     @include respond-to(tablet) {
+//       padding-bottom: 5%;
+//     }
 
-  &__sig {
-    padding-bottom: 8%;
-    font-size: 0.75rem;
-    text-align: left;
+//     @include respond-to(desktop) {
+//       font-size: 0.9rem;
+//       padding-bottom: 2%;
+//     }
+//   }
 
-    @include respond-to(tablet) {
-      padding-bottom: 5%;
-    }
+//   &__button {
+//     width: 80%;
+//     display: block !important;
+//     text-align: left !important;
+//     align-items: flex-start !important;
+//     justify-content: flex-start !important;
+//     padding-bottom: 8%;
 
-    @include respond-to(desktop) {
-      font-size: 0.9rem;
-      padding-bottom: 2%;
-    }
-  }
+//     @include respond-to(tablet) {
+//       padding-bottom: 5%;
+//     }
 
-  &__button {
-    width: 80%;
-    display: block !important;
-    text-align: left !important;
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-    padding-bottom: 8%;
+//     @include respond-to(desktop) {
+//       width: 40%;
+//       padding-bottom: 2%;
+//     }
+//   }
 
-    @include respond-to(tablet) {
-      padding-bottom: 5%;
-    }
+//   &__button button {
+//     background-color: #6a6754;
+//     color: #ffffff;
+//     font-family: "Tan Angleton";
+//     padding: 5% 10%;
+//     border: none;
+//     border-radius: 5px;
+//     font-size: 0.7rem;
+//     white-space: nowrap;
 
-    @include respond-to(desktop) {
-      width: 40%;
-      padding-bottom: 2%;
-    }
-  }
+//     @include respond-to(tablet) {
+//       font-size: 0.8rem;
+//     }
 
-  &__button button {
-    background-color: #6a6754;
-    color: #ffffff;
-    font-family: "Tan Angleton";
-    padding: 5% 10%;
-    border: none;
-    border-radius: 5px;
-    font-size: 0.7rem;
-    white-space: nowrap;
+//     @include respond-to(desktop) {
+//       font-size: 0.9rem;
+//     }
+//   }
 
-    @include respond-to(tablet) {
-      font-size: 0.8rem;
-    }
+//   &__button a,
+//   &__button button {
+//     margin: 0 !important;
+//     display: inline-block;
+//   }
 
-    @include respond-to(desktop) {
-      font-size: 0.9rem;
-    }
-  }
+//   &__emailus {
+//     font-size: 0.5em;
+//     margin: 0 1rem;
+//     padding: 0.7rem 1.5rem 1rem;
 
-  &__button a,
-  &__button button {
-    margin: 0 !important;
-    display: inline-block;
-  }
+//     @include respond-to(tablet) {
+//       padding: 0rem 1.8rem 1rem;
+//       font-size: 0.6em;
+//     }
 
-  &__emailus {
-    font-size: 0.5em;
-    margin: 0 1rem;
-    padding: 0.7rem 1.5rem 1rem;
-
-    @include respond-to(tablet) {
-      padding: 0rem 1.8rem 1rem;
-      font-size: 0.6em;
-    }
-
-    @include respond-to(desktop) {
-      font-size: 0.7em;
-    }
-  }
-}
+//     @include respond-to(desktop) {
+//       font-size: 0.7em;
+//     }
+//   }
+// }
