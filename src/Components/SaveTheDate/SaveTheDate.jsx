@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import "../../Components/SaveTheDate/SaveTheDate.scss";
 import { useParams } from "react-router-dom";
 import { db } from "../../config/firebase-config";
@@ -7,8 +7,8 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 
 export default function SaveTheDate() {
   const { email } = useParams();
-  const [valid, setValid] = useState(false)
-  const [loaded, setLoaded] = useState(false)
+  const [valid, setValid] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   const decodedEmail = decodeURIComponent(email);
 
@@ -26,20 +26,20 @@ export default function SaveTheDate() {
         }));
 
         if (userData.length > 0) {
-          setValid(true)
+          setValid(true);
         } else {
-          window.location.href = "https://uploads.dailydot.com/2024/04/confused-nick-young-.jpg?auto=compress&fit=fit&fm=jpg&h=600&w=1200";
+          window.location.href =
+            "https://uploads.dailydot.com/2024/04/confused-nick-young-.jpg?auto=compress&fit=fit&fm=jpg&h=600&w=1200";
         }
 
-        setLoaded(true)
-
+        setLoaded(true);
       } catch (err) {
         console.error("Error fetching users by name:", err);
       }
     };
 
     getUsersByEmail();
-  }, [])
+  }, []);
 
   if (loaded) {
     if (valid) {
@@ -67,13 +67,9 @@ export default function SaveTheDate() {
         </div>
       );
     } else {
-      return (
-        <div></div>
-      )
+      return <div></div>;
     }
   } else {
-    return (
-      <div></div>
-    )
+    return <div></div>;
   }
 }
