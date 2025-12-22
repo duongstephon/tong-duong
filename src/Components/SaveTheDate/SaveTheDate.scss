@@ -16,7 +16,6 @@ html {
 
 .std {
   font-family: "Tan Angleton", serif;
-  // background: url("/images/saveTheDateIMG.jpg");
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
@@ -30,7 +29,7 @@ html {
   text-align: center;
 
   &__container {
-    height: 90vh;
+    height: 85vh;
     width: 85vw;
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 2;
@@ -64,6 +63,7 @@ html {
     font-size: 2rem;
     letter-spacing: 1px;
     line-height: 1.5;
+    padding-top: 3%;
 
     @include respond-to(tablet) {
       font-size: 2.7rem;
@@ -124,6 +124,7 @@ html {
   &__location-time {
     line-height: 1.6;
     font-size: 0.95rem;
+    padding-bottom: 3%;
 
     @include respond-to(tablet) {
       font-size: 1.1rem;
