@@ -10,7 +10,8 @@ export default function Login() {
 
   const usersCollectionRef = collection(db, "Users");
 
-  const getUsersByEmail = async () => {
+  const getUsersByEmail = async (e) => {
+    e.preventDefault();
     try {
       const q = query(usersCollectionRef, where("email", "==", email));
       const data = await getDocs(q);
@@ -22,6 +23,7 @@ export default function Login() {
 
       if (userData.length > 0) {
         setEmail("");
+        setEmailError(false);
         window.location.href = `/savethedate/${encodeURIComponent(
           userData[0].email
         )}`;
@@ -50,14 +52,14 @@ export default function Login() {
         </div>
         <div className="login__email">
           <label className="login__email--title">Email</label>
-          <div className="login__email--heading">
+          <form className="login__email--heading" onSubmit={getUsersByEmail}>
             <input
               placeholder="you@example.com"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
             <div className="login__actions">
-              <button className="login__submit" onClick={getUsersByEmail}>
+              <button className="login__submit" type="submit">
                 Access Invitation
               </button>
               <a
@@ -67,7 +69,7 @@ export default function Login() {
                 Need help? Email us!
               </a>
             </div>
-          </div>
+          </form>
           {emailError && (
             <div className="login__error">
               <p className="login__error--message">
