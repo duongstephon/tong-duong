@@ -11,8 +11,6 @@ import ThankYou from "./Components/ThankYou/ThankYou";
 import OurStory from "./Components/OurStory/OurStory";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Router>
