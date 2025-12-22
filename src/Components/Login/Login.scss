@@ -77,15 +77,15 @@ input {
   }
 
   &__sc {
-    padding-top: 30%;
+    padding-top: 15vh;
     color: white;
 
     @include respond-to(tablet) {
-      padding-top: 15%;
+      padding-top: 15vh;
     }
 
     @include respond-to(desktop) {
-      padding-top: 8%;
+      padding-top: clamp(2rem, 15vh, 10rem);
     }
   }
 
@@ -127,26 +127,31 @@ input {
     width: 80%;
     max-width: 500px;
     text-align: center;
-    margin-top: -550px;
-    position: relative;
+    // margin-top: -550px;
+    // position: relative;
     left: 50%;
-    transform: translateX(-50%);
+    // transform: translateX(-50%);
     z-index: 100;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     color: #6a6754;
     min-height: 20vh;
     opacity: 85%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
 
     @include respond-to(tablet) {
-      margin-top: -500px;
+      // margin-top: -500px;
       // max-width: 500px;
       padding: 7%;
+      top: 60%;
     }
 
     @include respond-to(desktop) {
-      margin-top: -550px;
+      // margin-top: -500px;
       max-width: 600px;
       padding: 4%;
+      top: 55%;
     }
 
     &--info {
