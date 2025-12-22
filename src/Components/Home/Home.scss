@@ -1,25 +1,25 @@
-@use '../../styles/mixins' as *;
+@use "../../styles/mixins" as *;
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 @font-face {
-  font-family: 'Biro Script';
-  src: url('../../assets/fonts/Biro_Script_reduced.ttf') format('truetype');
+  font-family: "Biro Script";
+  src: url("../../assets/fonts/Biro_Script_reduced.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Tan Angleton';
-  src: url('../../assets/fonts/TAN-Angleton-Regular.ttf') format('truetype');
+  font-family: "Tan Angleton";
+  src: url("../../assets/fonts/TAN-Angleton-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 .home {
-  background: url('../../assets/images/hero.JPG');
+  background: url("/images/hero.JPG");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100vw;
@@ -34,27 +34,27 @@ p {
   }
 
   &__welcome {
-  font-family: 'Biro Script';
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: center;  
-  padding-top: 3rem;
-  color: #6A6754;
-  font-size: 1.5rem;
+    font-family: "Biro Script";
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    padding-top: 3rem;
+    color: #6a6754;
+    font-size: 1.5rem;
 
-  @include respond-to(tablet) {
-    padding-top: 4rem;
+    @include respond-to(tablet) {
+      padding-top: 4rem;
+    }
+
+    @include respond-to(desktop) {
+      padding-top: 4rem;
+      font-size: 1.7rem;
+    }
   }
 
-  @include respond-to(desktop) {
-    padding-top: 4rem;
-    font-size: 1.7rem;
-  }
-}
-
-&__sc {
-    font-family: 'Tan Angleton';
+  &__sc {
+    font-family: "Tan Angleton";
     color: white;
     position: absolute;
     top: 45%;
@@ -63,12 +63,11 @@ p {
     text-align: center;
     width: 100%;
 
-
     @include respond-to(desktop) {
-    position: absolute;
-    top: 49%;
-    left: 50%;
-    transform: translateX(-50%);
+      position: absolute;
+      top: 49%;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 
@@ -77,20 +76,19 @@ p {
     line-height: 1.6;
 
     @include respond-to(tablet) {
-        font-size: 1.9rem;
+      font-size: 1.9rem;
     }
 
     @include respond-to(desktop) {
-        font-size: clamp(2rem, 2.5vw, 3.5rem);
+      font-size: clamp(2rem, 2.5vw, 3.5rem);
     }
-
   }
 
   &__announcement {
     font-size: 0.9rem;
 
     @include respond-to(tablet) {
-    font-size: 1.2rem;
+      font-size: 1.2rem;
     }
 
     @include respond-to(desktop) {
@@ -98,9 +96,8 @@ p {
     }
   }
 
-
-&__location-time {
-    font-family: 'Tan Angleton';
+  &__location-time {
+    font-family: "Tan Angleton";
     color: white;
     position: absolute;
     bottom: 3%;
@@ -118,9 +115,5 @@ p {
       font-size: clamp(1.1rem, 1.4vw, 1.8rem);
       bottom: 2%;
     }
+  }
 }
-}
-
-
-
-

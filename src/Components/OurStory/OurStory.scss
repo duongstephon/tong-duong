@@ -1,26 +1,29 @@
-@use '../../styles/mixins' as *;
+@use "../../styles/mixins" as *;
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 @font-face {
-  font-family: 'Proxima Nova';
-  src: url('../../assets/fonts/proximanova_light.otf') format('truetype');
+  font-family: "Proxima Nova";
+  src: url("../../assets/fonts/proximanova_light.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Tan Angleton';
-  src: url('../../assets/fonts/TAN-Angleton-Regular.ttf') format('truetype');
+  font-family: "Tan Angleton";
+  src: url("../../assets/fonts/TAN-Angleton-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 .story {
-  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
-    url('../../assets/images/tyIMG.jpg');
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.85)
+    ),
+    url("/images/tyIMG.JPG.jpg");
   background-size: cover;
   background-position: 20% center;
   background-repeat: no-repeat;
@@ -28,57 +31,57 @@ p {
   align-items: center;
   display: flex;
   justify-content: center;
-  min-height: 100vh; 
+  min-height: 100vh;
   height: auto;
 
   &__container {
     padding: 4rem 2rem;
 
     @include respond-to(tablet) {
-        padding: 6rem 3rem;
-        width: 75vh;
+      padding: 6rem 3rem;
+      width: 75vh;
     }
 
     @include respond-to(desktop) {
-        padding: 6rem 3rem;
-        min-width: 60vw;
-        max-width: 70vw;
+      padding: 6rem 3rem;
+      min-width: 60vw;
+      max-width: 70vw;
     }
   }
 
   &__title {
-    font-family: 'Tan Angleton';
-    color: #6A6754;
+    font-family: "Tan Angleton";
+    color: #6a6754;
     font-size: 1.3em;
     padding-bottom: 1rem;
 
     @include respond-to(tablet) {
-        font-size: 1.7em;
+      font-size: 1.7em;
     }
 
     @include respond-to(desktop) {
-        font-size: 1.8em;
-        padding-bottom: 1.5rem;
+      font-size: 1.8em;
+      padding-bottom: 1.5rem;
     }
   }
 
-  &__text-1, &__text-2, &__text-3, &__text-4, &__text-5 {
-    font-family: 'Proxima Nova';
-    color: #6A6754;
+  &__text-1,
+  &__text-2,
+  &__text-3,
+  &__text-4,
+  &__text-5 {
+    font-family: "Proxima Nova";
+    color: #6a6754;
     line-height: 1.4;
     padding-bottom: 0.8rem;
 
     @include respond-to(tablet) {
-        font-size: 1.1em;
+      font-size: 1.1em;
     }
 
     @include respond-to(desktop) {
-        font-size: 1.2em;
-        line-height: 1.5;
+      font-size: 1.2em;
+      line-height: 1.5;
     }
   }
 }
-
-
-
-

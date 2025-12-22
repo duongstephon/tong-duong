@@ -1,25 +1,25 @@
-@use '../../styles/mixins' as *;
+@use "../../styles/mixins" as *;
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 @font-face {
-  font-family: 'Biro Script';
-  src: url('../../assets/fonts/Biro_Script_reduced.ttf') format('truetype');
+  font-family: "Biro Script";
+  src: url("../../assets/fonts/Biro_Script_reduced.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Tan Angleton';
-  src: url('../../assets/fonts/TAN-Angleton-Regular.ttf') format('truetype');
+  font-family: "Tan Angleton";
+  src: url("../../assets/fonts/TAN-Angleton-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 .ty {
-  background: url('../../assets/images/tyIMG.JPG');
+  background: url("/images/tyIMG.JPG.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,7 +28,7 @@ p {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  min-height: 100vh; 
+  min-height: 100vh;
   height: auto;
 
   @include respond-to(tablet) {
@@ -39,7 +39,7 @@ p {
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 2;
     border-radius: 5px;
-    border: 2px solid #6A6754;
+    border: 2px solid #6a6754;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,32 +49,31 @@ p {
     max-width: 900px;
 
     @include respond-to(tablet) {
-        max-width: 1500px;
-        margin: 4.5rem 2rem;
-        padding: 3rem 2rem;
+      max-width: 1500px;
+      margin: 4.5rem 2rem;
+      padding: 3rem 2rem;
     }
 
     @include respond-to(desktop) {
-        max-width: 2000px;
-        margin: 4rem 5rem;
-        padding: 4rem 4rem;
+      max-width: 2000px;
+      margin: 4rem 5rem;
+      padding: 4rem 4rem;
     }
-
   }
 
   &__box {
-  font-family: 'Biro Script';
-  padding-top: 1rem;
-  color: #6A6754;
-  font-size: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-
-  @include respond-to(desktop) {
+    font-family: "Biro Script";
     padding-top: 1rem;
-  }
+    color: #6a6754;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    @include respond-to(desktop) {
+      padding-top: 1rem;
+    }
   }
 
   &__ff {
@@ -83,11 +82,11 @@ p {
     padding-bottom: 1rem;
 
     @include respond-to(tablet) {
-        font-size: 1.5em;
+      font-size: 1.5em;
     }
 
     @include respond-to(desktop) {
-        font-size: 1.7em;
+      font-size: 1.7em;
     }
   }
 
@@ -97,15 +96,14 @@ p {
     line-height: 1.4;
 
     @include respond-to(tablet) {
-    font-size: 1.5em;
-    line-height: 1.5;
+      font-size: 1.5em;
+      line-height: 1.5;
     }
 
     @include respond-to(desktop) {
-    font-size: 1.6em;
-    line-height: 1.5;
+      font-size: 1.6em;
+      line-height: 1.5;
     }
-
   }
 
   &__names {
@@ -115,17 +113,13 @@ p {
     padding-top: 1rem;
 
     @include respond-to(tablet) {
-        font-size: 1.5em;
-        margin: 0;
+      font-size: 1.5em;
+      margin: 0;
     }
 
     @include respond-to(desktop) {
-        font-size: 1.7em;
-        margin: 0;
+      font-size: 1.7em;
+      margin: 0;
     }
   }
 }
-
-
-
-
