@@ -19,11 +19,9 @@ p {
 }
 
 .story {
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.85),
-      rgba(255, 255, 255, 0.85)
-    ),
-    url("/images/tyIMG.JPG.jpg");
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.85)),
+    url("/images/tyIMG.jpg");
   background-size: cover;
   background-position: 20% center;
   background-repeat: no-repeat;

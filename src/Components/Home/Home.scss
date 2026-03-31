@@ -40,7 +40,7 @@ p {
     align-items: flex-start;
     text-align: center;
     padding-top: 3rem;
-    color: #6a6754;
+    color: #3b372f;
     font-size: 1.5rem;
 
     @include respond-to(tablet) {
@@ -48,8 +48,9 @@ p {
     }
 
     @include respond-to(desktop) {
-      padding-top: 4rem;
-      font-size: 1.7rem;
+      padding-top: 12rem;
+      font-weight: 700;
+      font-size: 1.9rem;
     }
   }
 
@@ -68,6 +69,7 @@ p {
       top: 49%;
       left: 50%;
       transform: translateX(-50%);
+      padding-bottom: 5%;
     }
   }
 
@@ -113,7 +115,7 @@ p {
 
     @include respond-to(desktop) {
       font-size: clamp(1.1rem, 1.4vw, 1.8rem);
-      bottom: 2%;
+      padding-bottom: 3%;
     }
   }
 }
