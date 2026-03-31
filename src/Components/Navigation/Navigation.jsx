@@ -10,9 +10,10 @@ export default function Navigation() {
         <div className="navigation__links navigation__links--left">
           {/* <p><a href="#thankyou">Thank You</a></p> */}
           <Link to="/thankyou">Thank You</Link>
-          <p>
+          {/* <p>
             <a href="#weddingdetails">Wedding Details</a>
-          </p>
+          </p> */}
+          <Link to="/weddingdetails">Wedding Details</Link>
         </div>
         {/* logo */}
         <div className="navigation__logo">

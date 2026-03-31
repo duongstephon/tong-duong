@@ -1,31 +1,46 @@
-import { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
+
 import Home from "./Components/Home/Home";
-import "./App.css";
-// import EmailInvite from "./Components/EmailInvite/EmailInvite";
 import SaveTheDate from "./Components/SaveTheDate/SaveTheDate";
 import Login from "./Components/Login/Login";
 import Navbar from "./Components/Navbar/Navbar";
 import Navigation from "./Components/Navigation/Navigation";
 import ThankYou from "./Components/ThankYou/ThankYou";
 import OurStory from "./Components/OurStory/OurStory";
+import Details from "./Components/Details/Details";
+
+// 👇 This component is INSIDE Router, so useLocation works
+function Layout() {
+  const location = useLocation();
+
+  const hideNavbar = location.pathname === "/";
+
+  return (
+    <>
+      {!hideNavbar && <Navbar />}
+      {!hideNavbar && <Navigation />}
+
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/thankyou" element={<ThankYou />} />
+        <Route path="/weddingdetails" element={<Details />} />
+        <Route path="/ourstory" element={<OurStory />} />
+      </Routes>
+    </>
+  );
+}
 
 function App() {
   return (
-    <>
-      <Router>
-        <Navbar />
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Login />} />
-          {/* <Route path="/invite" element={<EmailInvite />} /> */}
-          <Route path="/home" element={<Home />} />
-          <Route path="/thankyou" element={<ThankYou />} />
-          <Route path="/ourstory" element={<OurStory />} />
-          {/* <Route path="/savethedate/:email" element={<SaveTheDate />} /> */}
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <Layout /> {/* 👈 IMPORTANT: Layout is inside Router */}
+    </Router>
   );
 }
 

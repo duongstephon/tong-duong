@@ -33,9 +33,13 @@ export default function Navbar() {
         <Link to="/ourstory" onClick={() => setMenuOpen(false)}>
           Our Story
         </Link>
-        <p>
+        {/* <p>
           <a href="#weddingdetails">Wedding Details</a>
-        </p>
+        </p> */}
+        <Link to="/weddingdetails" onClick={() => setMenuOpen(false)}>
+          Wedding Details
+        </Link>
+
         {/* <p><a href="#ourstory">Our Story</a></p> */}
         <p>
           <a href="#faq">FAQ</a>

@@ -1,0 +1,128 @@
+@use "../../styles/mixins" as *;
+
+p {
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../../assets/fonts/proximanova_regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Proxima Nova Light";
+  src: url("../../assets/fonts/proximanova_light.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tan Angleton";
+  src: url("../../assets/fonts/TAN-Angleton-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.details {
+  background-color: #ecece2;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: auto;
+  //   padding: 2rem 3rem;
+
+  @include respond-to(desktop) {
+    padding: 4rem 9rem;
+  }
+
+  &__container {
+    padding: 4rem 2rem;
+
+    @include respond-to(tablet) {
+      padding: 6rem 3rem;
+      width: 75vh;
+    }
+
+    @include respond-to(desktop) {
+      padding: 6rem 3rem;
+      min-width: 60vw;
+      max-width: 70vw;
+    }
+  }
+
+  &__title {
+    font-family: "Tan Angleton";
+    color: #6a6754;
+    font-size: 1.2em;
+    padding-bottom: 1rem;
+
+    @include respond-to(tablet) {
+      font-size: 1.7em;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 1.8em;
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  &__caption {
+    font-family: "Proxima Nova";
+    color: #6a6754;
+  }
+
+  &__section {
+    padding-top: 1.5rem;
+  }
+
+  &__when,
+  &__where,
+  &__address,
+  &__parking,
+  &__dress {
+    padding-bottom: 2rem;
+  }
+
+  &__subtitle {
+    font-family: "Tan Angleton";
+    font-size: 0.7em;
+    color: #6a6754;
+    letter-spacing: 0.5px;
+
+    @include respond-to(tablet) {
+      text-align: left; // aligns labels cleanly
+    }
+  }
+
+  &__description {
+    font-family: "Proxima Nova Light";
+    font-size: 1em;
+    color: #6a6754;
+    text-align: left;
+
+    &--small {
+      font-family: "Proxima Nova Light";
+      font-size: 0.9em;
+      color: #6a6754;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr; // mobile: stack
+    gap: 0.5rem;
+    padding-bottom: 2rem;
+
+    @include respond-to(tablet) {
+      grid-template-columns: 120px 1fr; // side-by-side
+      gap: 2rem;
+    }
+
+    @include respond-to(desktop) {
+      grid-template-columns: 150px 1fr; // more breathing room
+    }
+  }
+}

@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "./Login.scss";
 import { useState, useEffect } from "react";
 import { db } from "../../config/firebase-config";
@@ -10,17 +9,11 @@ export default function Login() {
   const [emailError, setEmailError] = useState(false);
 
   const usersCollectionRef = collection(db, "Users");
-  const navigate = useNavigate();
 
   const getUsersByEmail = async (e) => {
     e.preventDefault();
-
     try {
-      const normalizedEmail = email.toLowerCase();
-      const q = query(
-        usersCollectionRef,
-        where("email", "==", normalizedEmail)
-      );
+      const q = query(usersCollectionRef, where("email", "==", email));
       const data = await getDocs(q);
 
       const userData = data.docs.map((doc) => ({
@@ -31,10 +24,7 @@ export default function Login() {
       if (userData.length > 0) {
         setEmail("");
         setEmailError(false);
-        // window.location.href = `/savethedate/${encodeURIComponent(
-        //   userData[0].email
-        // )}`;
-        navigate(`/savethedate/${encodeURIComponent(userData[0].email)}`);
+        window.location.href = `/home`;
       } else {
         setEmailError(true);
       }
