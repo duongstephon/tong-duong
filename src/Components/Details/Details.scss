@@ -4,6 +4,16 @@ p {
   margin: 0;
 }
 
+html,
+body {
+  height: 100%; // needed as a baseline
+  overflow-y: auto; // mobile: allow scrolling
+
+  @include respond-to(desktop) {
+    overflow: hidden; // tablet+: lock it
+  }
+}
+
 @font-face {
   font-family: "Proxima Nova";
   src: url("../../assets/fonts/proximanova_regular.ttf") format("truetype");
@@ -32,7 +42,6 @@ p {
   justify-content: center;
   min-height: 100vh;
   height: auto;
-  //   padding: 2rem 3rem;
 
   @include respond-to(desktop) {
     padding: 4rem 9rem;

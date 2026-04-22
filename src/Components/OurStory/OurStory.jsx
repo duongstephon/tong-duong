@@ -7,16 +7,16 @@ export default function OurStory() {
       <div className="story__container">
         <p className="story__title">Our Story</p>
         <p className="story__text-1">
-          Stephon and Chelsia technically met in high school… though “met” might
-          be generous. Chelsia mostly avoided Stephon back then, convinced he
-          ran with the wrong crowd (translation: too loud and too chaotic).
+          Stephon and Chelsia technically met in high school, though “met” is a
+          stretch. Chelsia spent most of those years actively dodging him,
+          convinced he ran with the wrong crowd.
         </p>
         <p className="story__text-2">
-          Fast forward a few years and they ended up in the same program at the
-          University of Waterloo. With shared classes and a tight science friend
-          group, they saw each other pretty much every day and quickly became
-          best friends. Between movie nights, study sessions, and good eats,
-          they were inseparable but still “just friends.”
+          Fast forward a few years, and they ended up in the same program at
+          Waterloo. With shared classes and a tight-knit science group, they saw
+          each other nearly every day and quickly became besties. Between movie
+          nights, study sessions, and good eats, they were inseparable, though
+          they remained firmly in the "just friends" zone.
         </p>
         <p className="story__text-3">
           By the summer of 2019, one of them caught feelings for the other. We
