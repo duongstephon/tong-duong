@@ -8,6 +8,7 @@ html,
 body {
   height: 100%;
   overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 @font-face {
@@ -331,6 +332,27 @@ body {
 
     @include respond-to(tablet) {
       font-size: 1.1em;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 1.2em;
+      line-height: 22px;
+    }
+  }
+
+  &__back {
+    font-family: "Proxima Nova Light";
+    font-size: 1em;
+    color: #6a6754;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 1rem 0 5rem;
+
+    @include respond-to(tablet) {
+      font-size: 1.1em;
+      padding: 1rem 0 4rem;
     }
 
     @include respond-to(desktop) {

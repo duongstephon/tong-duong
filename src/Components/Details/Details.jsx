@@ -157,6 +157,15 @@ export default function Details() {
             </p>
           </div>
         </div>
+        <div
+          className="info__back"
+          onClick={() => {
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+          }}
+        >
+          <p>BACK TO TOP</p>
+        </div>
       </div>
     </>
   );
