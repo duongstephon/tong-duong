@@ -137,7 +137,7 @@ export default function Details() {
           <div className="info__container--indent">
             <p className="info__time">9:00 PM</p>
             <p className="info__description">
-              The dance floor is open, the open bar is flowing, the photo booth
+              The dance floor is open, the open bar is flowing, the photobooth
               is ready, and there are plenty of late-night bites to keep you
               going. Enjoy the rest of the evening.
             </p>
