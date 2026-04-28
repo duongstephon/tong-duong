@@ -7,7 +7,6 @@ export default function Faq() {
     <div className="faq">
       <div className="faq__container">
         <p className="faq__title">Frequently Asked Questions</p>
-
         <div className="faq__questions">
           <p className="faq__questions--title">When should I RSVP by?</p>
           <p className="faq__questions--answer">
@@ -59,6 +58,14 @@ export default function Faq() {
         </div>
         <div>
           <button className="faq__button">RSVP</button>
+        </div>
+        <div>
+          <p className="faq__email">
+            More questions? Email us at{" "}
+            <a href="mailto:stephonandchelsia@gmail.com">
+              <span>stephonandchelsia@gmail.com</span>
+            </a>
+          </p>
         </div>
       </div>
     </div>
