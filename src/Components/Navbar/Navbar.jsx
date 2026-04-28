@@ -41,9 +41,9 @@ export default function Navbar() {
         </Link>
 
         {/* <p><a href="#ourstory">Our Story</a></p> */}
-        <p>
-          <a href="#faq">FAQ</a>
-        </p>
+        <Link to="/faq" onClick={() => setMenuOpen(false)}>
+          FAQ
+        </Link>
         <p>
           <a href="#rsvp">RSVP</a>
         </p>

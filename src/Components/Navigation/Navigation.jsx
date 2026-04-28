@@ -24,9 +24,10 @@ export default function Navigation() {
         <div className="navigation__links navigation__links--right">
           <Link to="/ourstory">Our Story</Link>
           {/* <p><a href="#ourstory">Our Story</a></p> */}
-          <p>
+          {/* <p>
             <a href="#faq">FAQ</a>
-          </p>
+          </p> */}
+          <Link to="/faq">FAQ</Link>
           <p>
             <a href="#rsvp">RSVP</a>
           </p>
