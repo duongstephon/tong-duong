@@ -1,0 +1,337 @@
+@use "../../styles/mixins" as *;
+
+p {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+
+  @include respond-to(desktop) {
+    overflow: hidden;
+  }
+}
+
+span {
+  text-decoration: underline;
+  font-family: "Proxima Nova";
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../../assets/fonts/proximanova_regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Proxima Nova Light";
+  src: url("../../assets/fonts/proximanova_light.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tan Angleton";
+  src: url("../../assets/fonts/TAN-Angleton-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.rsvp {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.75)),
+    url("/src/assets/images/rsvp.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  background-position: 25% 20%;
+  overflow: hidden;
+  padding-bottom: 3rem;
+
+  @include respond-to(tablet) {
+    padding-bottom: 10rem;
+  }
+
+  @include respond-to(desktop) {
+    padding-bottom: 8rem;
+  }
+
+  &__container {
+    padding: 4rem 2rem;
+
+    @include respond-to(tablet) {
+      padding: 8rem 6rem;
+    }
+
+    @include respond-to(desktop) {
+      padding: 8rem 12rem;
+    }
+  }
+
+  &__title {
+    font-family: "Tan Angleton";
+    color: #6a6754;
+    font-size: 1.2em;
+    padding-bottom: 0.5rem;
+
+    @include respond-to(tablet) {
+      font-size: 1.4em;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 1.6em;
+    }
+  }
+
+  &__subtitle {
+    font-family: "Tan Angleton";
+    color: #6a6754;
+    font-size: 0.8em;
+    font-weight: 900;
+    padding: 0.5rem 0 0.2rem;
+
+    @include respond-to(tablet) {
+      font-size: 0.9em;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 1em;
+      padding-bottom: 0.2rem;
+    }
+  }
+
+  &__description {
+    font-family: "Proxima Nova Light";
+    line-height: 20px;
+    color: #6a6754;
+    font-size: 0.9em;
+    padding-bottom: 1.5rem;
+
+    @include respond-to(tablet) {
+      font-size: 1.1em;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 1.2em;
+      line-height: 24px;
+    }
+  }
+
+  &__caption {
+    font-family: "Proxima Nova Light";
+    line-height: 20px;
+    color: #6a6754;
+    font-size: 0.9em;
+    padding-bottom: 0.5rem;
+
+    @include respond-to(tablet) {
+      font-size: 1em;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 1.1em;
+      padding-bottom: 1rem;
+    }
+
+    &--type {
+      font-family: "Proxima Nova Light";
+      line-height: 20px;
+      color: #6a6754;
+      font-size: 0.9em;
+      width: 90%;
+      padding: 10px;
+
+      @include respond-to(desktop) {
+        font-size: 1em;
+      }
+    }
+  }
+  &__button {
+    margin-bottom: 1rem;
+
+    @include respond-to(tablet) {
+      margin-bottom: 0;
+    }
+
+    &--yes,
+    &--no {
+      background-color: white;
+      border: 1px solid #787351;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      color: #787351;
+      font-family: "Proxima Nova Light";
+      font-size: 0.9em;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #787351;
+        color: white;
+      }
+
+      &.active {
+        background-color: #787351;
+        color: white;
+      }
+
+      &:focus {
+        outline: none;
+        background-color: white;
+        color: #787351;
+      }
+
+      &:focus.active {
+        background-color: #787351;
+        color: white;
+      }
+
+      @include respond-to(tablet) {
+        font-size: 0.9em;
+        padding: 0.6rem 1rem;
+        margin-bottom: 1.5rem;
+        margin-top: 0.2rem;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 1em;
+        padding: 0.6rem 1.2rem;
+      }
+    }
+
+    &--yes {
+      margin-right: 0.5rem;
+    }
+
+    &--menu {
+      background-color: white;
+      border: 1px solid #787351;
+      border-radius: 5px;
+      padding: 0.5rem 0.9rem;
+      color: #787351;
+      font-family: "Proxima Nova Light";
+      font-size: 0.9em;
+      margin-bottom: 0.2rem;
+      margin-right: 0.5rem;
+
+      cursor: pointer;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+
+      &:hover {
+        background-color: #787351;
+        color: white;
+      }
+
+      &:focus {
+        outline: none;
+        background-color: white;
+        color: #787351;
+      }
+
+      &:focus.active {
+        background-color: #787351;
+        color: white;
+      }
+
+      &.active {
+        background-color: #787351;
+        color: white;
+      }
+
+      @include respond-to(tablet) {
+        font-size: 0.9em;
+        padding: 0.6rem 1rem;
+        margin-top: 0.2rem;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 1em;
+        padding: 0.6rem 1.2rem;
+      }
+    }
+  }
+
+  &__no {
+    font-family: "Proxima Nova Light";
+    line-height: 20px;
+    color: #6a6754;
+    font-size: 0.9em;
+
+    @include respond-to(tablet) {
+      font-size: 1em;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 1.1em;
+      padding-top: 0.5rem;
+    }
+  }
+
+  &__dietary,
+  &__meal {
+    padding-top: 0.6rem;
+
+    @include respond-to(desktop) {
+      padding-top: 0.7rem;
+    }
+  }
+
+  &__rsvp {
+    margin: 1rem 0 0.5rem;
+    background-color: white;
+    border: 1px solid #787351;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: #787351;
+    font-family: "Proxima Nova Light";
+    font-size: 0.9em;
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+
+    &:hover {
+      background-color: #787351;
+      color: white;
+    }
+
+    &.active {
+      background-color: #787351;
+      color: white;
+    }
+
+    @include respond-to(tablet) {
+      padding: 0.6rem 1rem;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 1em;
+      padding: 0.6rem 1.2rem;
+      margin-top: 0.6rem;
+      overflow: hidden;
+    }
+  }
+
+  &__confirmed {
+    font-family: "Proxima Nova Light";
+    line-height: 20px;
+    color: #6a6754;
+    font-size: 0.9em;
+
+    @include respond-to(tablet) {
+      font-size: 1em;
+      margin-top: 0.5rem;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 1.1em;
+      margin-top: 1rem;
+    }
+  }
+}

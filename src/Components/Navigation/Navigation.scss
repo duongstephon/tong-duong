@@ -1,30 +1,30 @@
-@use '../../styles/mixins' as *;
+@use "../../styles/mixins" as *;
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 @font-face {
-  font-family: 'Biro Script';
-  src: url('../../assets/fonts/Biro_Script_reduced.ttf') format('truetype');
+  font-family: "Biro Script";
+  src: url("../../assets/fonts/Biro_Script_reduced.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Tan Angleton';
-  src: url('../../assets/fonts/TAN-Angleton-Regular.ttf') format('truetype');
+  font-family: "Tan Angleton";
+  src: url("../../assets/fonts/TAN-Angleton-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 .navigation {
-    display: none;
-    visibility: hidden;
-    height: 0;
-    overflow: hidden;
+  display: none;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
 
-    @include respond-to(tablet) {
+  @include respond-to(tablet) {
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -33,9 +33,9 @@ p {
     height: auto;
     overflow: visible;
     margin-top: 10px;
-    }
+  }
 
-    @include respond-to(desktop) {
+  @include respond-to(desktop) {
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -44,85 +44,85 @@ p {
     height: auto;
     overflow: visible;
     margin-top: 10px;
-    }
+  }
 
   &__container {
-
     @include respond-to(tablet) {
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.35);
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    max-width: 1500px;
-    margin: 0 0.5rem;
-    padding: 0.5rem 1rem;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.35);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      max-width: 1500px;
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
     }
 
     @include respond-to(desktop) {
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.35);
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    max-width: 2000px;
-    margin: 0 0.5rem;
-    padding: 0.5rem 2rem;
-    height: 3vh;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.35);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      // max-width: 2700px;
+      margin: 0 0.5rem;
+      padding: 0.5rem 2rem;
+      height: 3vh;
     }
   }
 
   &__links {
-
     @include respond-to(tablet) {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    font-size: 1em;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      font-size: 1em;
     }
 
     @include respond-to(desktop) {
-    display: flex;
-    gap: 1.5rem;
-    font-size: 1.2em;
+      display: flex;
+      gap: 1.5rem;
+      font-size: 1.2em;
     }
 
     &--left {
+      @include respond-to(tablet) {
+        justify-content: flex-start;
+      }
 
-    @include respond-to(tablet) {
-    justify-content: flex-start;
-    }
-
-    @include respond-to(desktop) {
-    justify-content: flex-start;
-    }
+      @include respond-to(desktop) {
+        justify-content: flex-start;
+      }
     }
 
     &--right {
-    
-    @include respond-to(tablet) {
-    justify-content: flex-end;
+      @include respond-to(tablet) {
+        justify-content: flex-end;
+      }
 
-    }
-
-    @include respond-to(desktop){
-    justify-content: flex-end;
-    }
+      @include respond-to(desktop) {
+        justify-content: flex-end;
+      }
     }
   }
 
   &__logo {
-
     @include respond-to(tablet) {
-    text-align: center;
-    color: #6A6754;   
-    font-size: 1.1em;   
+      text-align: center;
+      color: #6a6754;
+      font-size: 1.1em;
     }
 
     @include respond-to(desktop) {
-    text-align: center;
-    color: #6A6754;
-    font-size: 1.5em;
+      text-align: center;
+      color: #6a6754;
+      font-size: 1.5em;
     }
+  }
+
+  &__link--disabled {
+    color: #6a675480;
+    text-decoration: none;
+    cursor: not-allowed;
   }
 }

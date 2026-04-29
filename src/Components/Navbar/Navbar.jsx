@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const rsvpSubmitted = localStorage.getItem("rsvpSubmitted") === "true";
 
   return (
     <nav className="navbar">
@@ -44,9 +45,13 @@ export default function Navbar() {
         <Link to="/faq" onClick={() => setMenuOpen(false)}>
           FAQ
         </Link>
-        <p>
-          <a href="#rsvp">RSVP</a>
-        </p>
+        {rsvpSubmitted ? (
+          <span className="navbar__link--disabled">RSVP</span>
+        ) : (
+          <Link to="/rsvp" onClick={() => setMenuOpen(false)}>
+            RSVP
+          </Link>
+        )}
       </div>
     </nav>
   );

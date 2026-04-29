@@ -45,7 +45,6 @@ span {
   &__container {
     background-color: #ecece2;
     padding: 4rem 2rem;
-    background-color: #ecece2;
 
     @include respond-to(tablet) {
       padding: 8rem 5rem 6rem;
