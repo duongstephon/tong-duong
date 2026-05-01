@@ -173,17 +173,17 @@ body {
 
   &__row {
     display: grid;
-    grid-template-columns: 1fr; // mobile: stack
+    grid-template-columns: 1fr;
     gap: 0.2rem;
     padding-bottom: 2rem;
 
     @include respond-to(tablet) {
-      grid-template-columns: 120px 1fr; // side-by-side
+      grid-template-columns: 120px 1fr;
       gap: 2rem;
     }
 
     @include respond-to(desktop) {
-      grid-template-columns: 150px 1fr; // more breathing room
+      grid-template-columns: 150px 1fr;
     }
   }
 
@@ -251,7 +251,7 @@ body {
 
 .info {
   background-color: white;
-  padding: 4rem 2rem 0rem;
+  padding: 4rem 2rem 3rem;
 
   @include respond-to(tablet) {
     padding: 5rem 7rem;
@@ -347,24 +347,24 @@ body {
     }
   }
 
-  &__back {
-    font-family: "Proxima Nova Light";
-    font-size: 1em;
-    color: #6a6754;
-    line-height: 20px;
-    text-align: center;
-    cursor: pointer;
-    text-decoration: underline;
-    padding: 1rem 0 5rem;
+  // &__back {
+  //   font-family: "Proxima Nova Light";
+  //   font-size: 1em;
+  //   color: #6a6754;
+  //   line-height: 20px;
+  //   text-align: center;
+  //   cursor: pointer;
+  //   text-decoration: underline;
+  //   padding: 1rem 0 5rem;
 
-    @include respond-to(tablet) {
-      font-size: 1.1em;
-      padding: 1rem 0 4rem;
-    }
+  //   @include respond-to(tablet) {
+  //     font-size: 1.1em;
+  //     padding: 1rem 0 4rem;
+  //   }
 
-    @include respond-to(desktop) {
-      font-size: 1.2em;
-      line-height: 22px;
-    }
-  }
+  //   @include respond-to(desktop) {
+  //     font-size: 1.2em;
+  //     line-height: 22px;
+  //   }
+  // }
 }
