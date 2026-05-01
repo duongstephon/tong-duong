@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
 import "./Rsvp.scss";
 import { db } from "../../config/firebase-config";
 import {
@@ -13,32 +14,54 @@ export default function Rsvp() {
   const [guests, setGuests] = useState([]);
   const [responses, setResponses] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [initialized, setInitialized] = useState(false);
+
+  const mealLabels = {
+    chicken: "Marinated Boneless Chicken Leg",
+    salmon: "Pan-roasted Atlantic Salmon",
+    vegetarian: "Vegetarian",
+    vegan: "Vegan",
+  };
 
   useEffect(() => {
     const fetchGuests = async () => {
       const email = localStorage.getItem("guestEmail");
+
       try {
         const q = query(collection(db, "Users"), where("email", "==", email));
         const snapshot = await getDocs(q);
+
         const guestData = snapshot.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
           ref: doc.ref,
         }));
+
         guestData.sort((a, b) => a.firstName.localeCompare(b.firstName));
+
         setGuests(guestData);
 
         const initial = {};
         guestData.forEach((guest) => {
           initial[guest.id] = {
-            attending: null,
-            meal: null,
-            dietary: "",
+            attending: guest.attending || null,
+            meal: guest.mealPreference || null,
+            dietary: guest.dietaryRestrictions || "",
           };
         });
+
         setResponses(initial);
+
+        const alreadySubmitted =
+          guestData.length > 0 &&
+          guestData.every((g) => g.rsvpSubmitted === true);
+
+        setSubmitted(alreadySubmitted);
       } catch (err) {
         console.error("Error fetching guests:", err);
+      } finally {
+        setInitialized(true);
       }
     };
 
@@ -46,6 +69,8 @@ export default function Rsvp() {
   }, []);
 
   const updateResponse = (guestId, field, value) => {
+    if (submitted) return;
+
     setResponses((prev) => ({
       ...prev,
       [guestId]: {
@@ -56,21 +81,72 @@ export default function Rsvp() {
   };
 
   const handleSubmit = async () => {
-    setSubmitted(true);
+    if (loading || submitted) return;
+
+    setLoading(true);
+
     try {
+      const email = localStorage.getItem("guestEmail");
+      const guestNames = guests.map((g) => g.firstName).join(", ");
+
+      // 1. Validate responses first
+      const safeResponses = {};
+      guests.forEach((g) => {
+        safeResponses[g.id] = responses[g.id] || {
+          attending: null,
+          meal: null,
+          dietary: "",
+        };
+      });
+
+      // 2. Build summary safely
+      const summary = guests
+        .map((guest) => {
+          const r = safeResponses[guest.id];
+
+          if (r.attending === "yes") {
+            return `${guest.firstName}: Attending | Meal: ${
+              mealLabels[r.meal] || "Not selected"
+            } | Dietary: ${r.dietary || "None"}`;
+          }
+
+          return `${guest.firstName}: Not Attending`;
+        })
+        .join("\n");
+
+      // 3. Update Firestore FIRST
       for (const guest of guests) {
-        const response = responses[guest.id];
+        const r = safeResponses[guest.id];
+
         await updateDoc(guest.ref, {
           rsvpSubmitted: true,
-          attending: response.attending,
-          mealPreference: response.meal,
-          dietaryRestrictions: response.dietary,
+          attending: r.attending,
+          mealPreference: r.meal,
+          dietaryRestrictions: r.dietary,
         });
       }
-      localStorage.setItem("rsvpSubmitted", "true");
-      window.dispatchEvent(new Event("storage"));
+
+      // 4. Send EmailJS AFTER Firestore succeeds
+      console.log("Sending EmailJS...");
+
+      const result = await emailjs.send(
+        "service_gdmgwlh",
+        "template_wwg0cyg",
+        {
+          guest_email: email,
+          guest_names: guestNames,
+          summary,
+        },
+        "qZQ5X8u9-41-_J5ty",
+      );
+
+      console.log("EmailJS success:", result);
+
+      setSubmitted(true);
     } catch (err) {
-      console.error("Error submitting RSVP:", err);
+      console.error("RSVP submission failed:", err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -84,140 +160,143 @@ export default function Rsvp() {
       return false;
     });
 
+  if (!initialized) return null;
+
+  const summaryList = guests.map((guest) => {
+    const r = responses[guest.id] || {};
+    return {
+      name: guest.firstName,
+      attending: r.attending,
+      meal: r.meal,
+      dietary: r.dietary,
+    };
+  });
+
   return (
     <div className="rsvp">
       <div className="rsvp__container">
-        <div>
-          <p className="rsvp__title">RSVP</p>
-          <p className="rsvp__description">
-            We're so grateful to have you with us. Your presence means the
-            world. Please RSVP below.
-          </p>
-        </div>
+        {submitted ? (
+          <div className="rsvp__confirmation">
+            <p className="rsvp__title">RSVP</p>
 
-        {guests.map((guest) => {
-          const response = responses[guest.id] || {};
-          return (
-            <div key={guest.id} className="rsvp__guest">
-              <p className="rsvp__subtitle">{guest.firstName}</p>
-              <p className="rsvp__caption">
-                Will you be attending the Wedding?
-              </p>
-              <div className="rsvp__button">
-                <button
-                  className={`rsvp__button--yes ${response.attending === "yes" ? "active" : ""}`}
-                  onClick={() =>
-                    !submitted && updateResponse(guest.id, "attending", "yes")
-                  }
-                  disabled={submitted}
-                >
-                  Yes
-                </button>
-                <button
-                  className={`rsvp__button--no ${response.attending === "no" ? "active" : ""}`}
-                  onClick={() =>
-                    !submitted && updateResponse(guest.id, "attending", "no")
-                  }
-                  disabled={submitted}
-                >
-                  No
-                </button>
-              </div>
+            <p className="rsvp__confirmed" style={{ marginTop: "1rem" }}>
+              We have received your RSVP. Thank you!
+            </p>
 
-              {response.attending === "yes" && (
-                <div className="rsvp__extra">
-                  <div className="rsvp__meal">
-                    <p className="rsvp__subtitle">Meal Preference (entrée)</p>
-                    <p className="rsvp__caption">
-                      Please select your meal choice.
-                    </p>
-                    <div className="rsvp__button">
-                      <button
-                        className={`rsvp__button--menu ${response.meal === "chicken" ? "active" : ""}`}
-                        onClick={() =>
-                          !submitted &&
-                          updateResponse(guest.id, "meal", "chicken")
-                        }
-                        disabled={submitted}
-                      >
-                        Marinated Boneless Chicken Leg
-                      </button>
-                      <button
-                        className={`rsvp__button--menu ${response.meal === "salmon" ? "active" : ""}`}
-                        onClick={() =>
-                          !submitted &&
-                          updateResponse(guest.id, "meal", "salmon")
-                        }
-                        disabled={submitted}
-                      >
-                        Pan-roasted Atlantic Salmon
-                      </button>
-                      <button
-                        className={`rsvp__button--menu ${response.meal === "vegetarian" ? "active" : ""}`}
-                        onClick={() =>
-                          !submitted &&
-                          updateResponse(guest.id, "meal", "vegetarian")
-                        }
-                        disabled={submitted}
-                      >
-                        Vegetarian
-                      </button>
-                      <button
-                        className={`rsvp__button--menu ${response.meal === "vegan" ? "active" : ""}`}
-                        onClick={() =>
-                          !submitted &&
-                          updateResponse(guest.id, "meal", "vegan")
-                        }
-                        disabled={submitted}
-                      >
-                        Vegan
-                      </button>
-                    </div>
-                  </div>
+            <div style={{ marginTop: "1.5rem" }}>
+              {summaryList.map((guest, i) => (
+                <div key={i} className="rsvp__guest">
+                  <p className="rsvp__subtitle">{guest.name}</p>
 
-                  <div className="rsvp__dietary">
-                    <p className="rsvp__subtitle">
-                      Dietary Restrictions or Allergies
-                    </p>
-                    <textarea
-                      className="rsvp__caption--type"
-                      placeholder="Please let us know if you have any dietary restrictions or allergies."
-                      rows={3}
-                      value={response.dietary}
-                      onChange={(e) =>
-                        updateResponse(guest.id, "dietary", e.target.value)
-                      }
-                      disabled={submitted}
-                    />
-                  </div>
+                  {guest.attending === "yes" ? (
+                    <>
+                      <p className="rsvp__caption">
+                        Attending – {mealLabels[guest.meal]}
+                      </p>
+
+                      {guest.dietary && (
+                        <p className="rsvp__caption">
+                          Dietary: {guest.dietary}
+                        </p>
+                      )}
+                    </>
+                  ) : (
+                    <p className="rsvp__caption">Not attending</p>
+                  )}
                 </div>
-              )}
-
-              {response.attending === "no" && (
-                <p className="rsvp__no">
-                  We'll miss you, but we understand. Thank you for letting us
-                  know!
-                </p>
-              )}
+              ))}
             </div>
-          );
-        })}
-
-        {allAnswered && (
-          <div>
-            <button
-              className={`rsvp__rsvp ${submitted ? "active" : ""}`}
-              onClick={handleSubmit}
-              disabled={submitted}
-            >
-              {submitted ? "RSVP Submitted!" : "Submit RSVP"}
-            </button>
-            {submitted && (
-              <p className="rsvp__confirmed">
-                You're in! We'll see you on the big day.
-              </p>
-            )}
           </div>
+        ) : (
+          <>
+            <p className="rsvp__title">RSVP</p>
+
+            <p className="rsvp__description">
+              We're so grateful to have you with us. Your presence means the
+              world.
+            </p>
+
+            {guests.map((guest) => {
+              const response = responses[guest.id] || {};
+
+              return (
+                <div key={guest.id} className="rsvp__guest">
+                  <p className="rsvp__subtitle">{guest.firstName}</p>
+
+                  <p className="rsvp__caption">
+                    Will you be attending the Wedding?
+                  </p>
+
+                  <div className="rsvp__button">
+                    <button
+                      className={`rsvp__button--yes ${
+                        response.attending === "yes" ? "active" : ""
+                      }`}
+                      onClick={() =>
+                        updateResponse(guest.id, "attending", "yes")
+                      }
+                    >
+                      Yes
+                    </button>
+
+                    <button
+                      className={`rsvp__button--no ${
+                        response.attending === "no" ? "active" : ""
+                      }`}
+                      onClick={() =>
+                        updateResponse(guest.id, "attending", "no")
+                      }
+                    >
+                      No
+                    </button>
+                  </div>
+
+                  {response.attending === "yes" && (
+                    <div className="rsvp__extra">
+                      <p className="rsvp__subtitle">Meal Preference (entrée)</p>
+
+                      <div className="rsvp__button">
+                        {Object.entries(mealLabels).map(([key, label]) => (
+                          <button
+                            key={key}
+                            className={`rsvp__button--menu ${
+                              response.meal === key ? "active" : ""
+                            }`}
+                            onClick={() =>
+                              updateResponse(guest.id, "meal", key)
+                            }
+                          >
+                            {label}
+                          </button>
+                        ))}
+                      </div>
+
+                      <p className="rsvp__subtitle">Dietary Restrictions</p>
+
+                      <textarea
+                        className="rsvp__caption--type"
+                        rows={3}
+                        value={response.dietary}
+                        onChange={(e) =>
+                          updateResponse(guest.id, "dietary", e.target.value)
+                        }
+                      />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+
+            {allAnswered && (
+              <button
+                className="rsvp__rsvp"
+                onClick={handleSubmit}
+                disabled={loading}
+              >
+                {loading ? "Submitting..." : "Submit RSVP"}
+              </button>
+            )}
+          </>
         )}
       </div>
     </div>

@@ -73,9 +73,9 @@ export default function Details() {
               </div>
             </div>
           </div>
-          <div>
-            <button className="details__button">RSVP</button>
-          </div>
+          <Link to="/rsvp" className="details__button">
+            RSVP
+          </Link>
           <div className="details__cover">
             <img
               className="details__cover--photo"

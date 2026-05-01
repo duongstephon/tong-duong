@@ -116,13 +116,4 @@ a {
       white-space: nowrap;
     }
   }
-
-  &__link--disabled {
-    color: #6a6754;
-    opacity: 0.4;
-    text-decoration: none;
-    cursor: not-allowed;
-    font-family: "Tan Angleton";
-    font-size: 0.8rem;
-  }
 }

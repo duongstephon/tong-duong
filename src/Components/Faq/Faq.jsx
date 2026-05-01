@@ -56,9 +56,9 @@ export default function Faq() {
             appreciate your understanding and support.
           </p>
         </div>
-        <div>
-          <button className="faq__button">RSVP</button>
-        </div>
+        <Link to="/rsvp" className="faq__button">
+          RSVP
+        </Link>
         <div>
           <p className="faq__email">
             More questions? Email us at{" "}
