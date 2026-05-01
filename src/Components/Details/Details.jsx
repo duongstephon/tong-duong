@@ -125,7 +125,7 @@ export default function Details() {
         <div className="info__container">
           <p className="info__subtitle">0.4 RECEPTION</p>
           <div className="info__container--indent">
-            <p className="info__time">7:00 PM</p>
+            <p className="info__time">7:15 PM</p>
             <p className="info__description">
               Join us for dinner, speeches, and a relaxed evening with the
               people we love as we continue the celebration together.
@@ -135,7 +135,7 @@ export default function Details() {
         <div className="info__container">
           <p className="info__subtitle">0.5 DANCE FLOOR OPENS</p>
           <div className="info__container--indent">
-            <p className="info__time">9:00 PM</p>
+            <p className="info__time">9:30 PM</p>
             <p className="info__description">
               The dance floor is open, the open bar is flowing, the photobooth
               is ready, and there are plenty of late-night bites to keep you

@@ -48,17 +48,18 @@ span {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background-position: 25% 20%;
-  overflow: hidden;
+  // overflow: hidden;
   padding-bottom: 3rem;
 
   @include respond-to(tablet) {
-    padding-bottom: 10rem;
+    padding-bottom: 1rem;
   }
 
   @include respond-to(desktop) {
-    padding-bottom: 8rem;
+    padding-bottom: 1rem;
   }
 
   &__container {
@@ -332,6 +333,16 @@ span {
     @include respond-to(desktop) {
       font-size: 1.1em;
       margin-top: 1rem;
+    }
+  }
+
+  &__guest {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #6a675430;
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+      border-bottom: none;
     }
   }
 }

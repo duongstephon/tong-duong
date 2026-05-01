@@ -1,10 +1,22 @@
 import "./Navbar.scss";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const rsvpSubmitted = localStorage.getItem("rsvpSubmitted") === "true";
+  const [rsvpSubmitted, setRsvpSubmitted] = useState(
+    localStorage.getItem("rsvpSubmitted") === "true",
+  );
+  // const guestNames = localStorage.getItem("guestNames") || "Guest";
+
+  useEffect(() => {
+    const checkRsvp = () => {
+      setRsvpSubmitted(localStorage.getItem("rsvpSubmitted") === "true");
+    };
+
+    window.addEventListener("storage", checkRsvp); // 👈 listens for localStorage changes
+    return () => window.removeEventListener("storage", checkRsvp);
+  }, []);
 
   return (
     <nav className="navbar">
@@ -20,28 +32,21 @@ export default function Navbar() {
       </div>
 
       <div className={`navbar__menu ${menuOpen ? "show" : ""}`}>
-        <div className="navbar__welcome">
-          <p>Welcome, #name</p>
-        </div>
-        {/* <p><a href="#home">Home</a></p> */}
+        {/* <div className="navbar__welcome">
+          <p>Welcome, {guestNames}</p>
+        </div> */}
         <Link to="/home" onClick={() => setMenuOpen(false)}>
           Home
         </Link>
         <Link to="/thankyou" onClick={() => setMenuOpen(false)}>
           Thank You
         </Link>
-        {/* <p><a href="#thankyou">Thank You</a></p> */}
         <Link to="/ourstory" onClick={() => setMenuOpen(false)}>
           Our Story
         </Link>
-        {/* <p>
-          <a href="#weddingdetails">Wedding Details</a>
-        </p> */}
         <Link to="/weddingdetails" onClick={() => setMenuOpen(false)}>
           Wedding Details
         </Link>
-
-        {/* <p><a href="#ourstory">Our Story</a></p> */}
         <Link to="/faq" onClick={() => setMenuOpen(false)}>
           FAQ
         </Link>

@@ -1,14 +1,20 @@
 @use "../../styles/mixins" as *;
 
+#root {
+  height: auto;
+  min-height: 100%;
+}
+
 p {
   margin: 0;
 }
 
 html,
 body {
-  height: 100%;
+  height: auto;
   overflow-y: auto;
   scroll-behavior: smooth;
+  min-height: 100%;
 }
 
 @font-face {
@@ -43,6 +49,7 @@ body {
     align-items: stretch;
     display: flex;
     padding: 4rem 0 6rem 5rem;
+    min-height: auto;
   }
 
   &__container {
@@ -276,7 +283,7 @@ body {
     padding-bottom: 2rem;
 
     @include respond-to(tablet) {
-      padding-bottom: 4rem;
+      padding-bottom: 3rem;
     }
 
     @include respond-to(desktop) {

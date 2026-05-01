@@ -19,23 +19,25 @@ import Rsvp from "./Components/Rsvp/Rsvp";
 // 👇 This component is INSIDE Router, so useLocation works
 function Layout() {
   const location = useLocation();
-
   const hideNavbar = location.pathname === "/";
 
   return (
     <>
       {!hideNavbar && <Navbar />}
       {!hideNavbar && <Navigation />}
-
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/thankyou" element={<ThankYou />} />
-        <Route path="/weddingdetails" element={<Details />} />
-        <Route path="/ourstory" element={<OurStory />} />
-        <Route path="/faq" element={<Faq />} />
-        <Route path="/rsvp" element={<Rsvp />} />
-      </Routes>
+      <div style={{ overflowY: "auto", height: "100vh" }}>
+        {" "}
+        {/* 👈 add this */}
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/thankyou" element={<ThankYou />} />
+          <Route path="/weddingdetails" element={<Details />} />
+          <Route path="/ourstory" element={<OurStory />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/rsvp" element={<Rsvp />} />
+        </Routes>
+      </div>
     </>
   );
 }
@@ -43,7 +45,7 @@ function Layout() {
 function App() {
   return (
     <Router>
-      <Layout /> {/* 👈 IMPORTANT: Layout is inside Router */}
+      <Layout />
     </Router>
   );
 }

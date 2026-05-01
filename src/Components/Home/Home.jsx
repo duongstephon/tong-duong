@@ -2,10 +2,12 @@ import React from "react";
 import "./Home.scss";
 
 export default function Home() {
+  const guestNames = localStorage.getItem("guestNames") || "Guest";
+  //added the above to see if it works
   return (
     <div className="home">
       <div className="home__welcome">
-        <p>Welcome, #name</p>
+        <p>Welcome, {guestNames}</p>
       </div>
       <div className="home__sc">
         <p className="home__names">Stephon & Chelsia</p>

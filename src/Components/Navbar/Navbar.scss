@@ -83,6 +83,12 @@ a {
     font-family: "Biro Script", cursive;
     font-size: 1.5rem;
     white-space: nowrap;
+    word-break: break-word;
+    white-space: normal;
+
+    p {
+      line-height: 1.4;
+    }
   }
 
   &__menu {
@@ -112,10 +118,11 @@ a {
   }
 
   &__link--disabled {
-    color: #6a675480;
+    color: #6a6754;
+    opacity: 0.4;
     text-decoration: none;
     cursor: not-allowed;
     font-family: "Tan Angleton";
-    font-size: 0.9em;
+    font-size: 0.8rem;
   }
 }

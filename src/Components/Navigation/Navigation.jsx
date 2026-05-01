@@ -1,23 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../../Components/Navigation/Navigation.scss";
 import { Link } from "react-router-dom";
 
 export default function Navigation() {
-  const rsvpSubmitted = localStorage.getItem("rsvpSubmitted") === "true";
+  const [rsvpSubmitted, setRsvpSubmitted] = useState(
+    localStorage.getItem("rsvpSubmitted") === "true",
+  );
+
+  useEffect(() => {
+    const checkRsvp = () => {
+      setRsvpSubmitted(localStorage.getItem("rsvpSubmitted") === "true");
+    };
+
+    window.addEventListener("storage", checkRsvp);
+    return () => window.removeEventListener("storage", checkRsvp);
+  }, []);
 
   return (
     <nav className="navigation">
       <div className="navigation__container">
-        {/* left navigation links */}
         <div className="navigation__links navigation__links--left">
           <Link to="/thankyou">Thank You</Link>
           <Link to="/weddingdetails">Wedding Details</Link>
         </div>
-        {/* logo */}
         <div className="navigation__logo">
           <Link to="/home">S+C</Link>
         </div>
-        {/* right navigation links */}
         <div className="navigation__links navigation__links--right">
           <Link to="/ourstory">Our Story</Link>
           <Link to="/faq">FAQ</Link>
