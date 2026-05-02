@@ -16,7 +16,7 @@ export default function Navigation() {
         </div>
 
         <div className="navigation__links navigation__links--right">
-          <Link to="/ourstory">Our Story</Link>
+          {/* <Link to="/ourstory">Our Story</Link> */}
           <Link to="/faq">FAQ</Link>
           <Link to="/rsvp">RSVP</Link>
         </div>

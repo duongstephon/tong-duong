@@ -56,6 +56,19 @@ export default function Faq() {
             appreciate your understanding and support.
           </p>
         </div>
+        <div className="faq__questions">
+          <p className="faq__questions--title">Where can I park?</p>
+          <p className="faq__questions--answer">
+            There is complimentary on-site parking available for all guests.
+          </p>
+        </div>
+        <div className="faq__questions">
+          <p className="faq__questions--title">Is there an open bar?</p>
+          <p className="faq__questions--answer">
+            An open bar will be available for all guests. In accordance with
+            venue policies, outside alcohol is not permitted.
+          </p>
+        </div>
         <Link to="/rsvp" className="faq__button">
           RSVP
         </Link>

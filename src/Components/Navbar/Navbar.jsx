@@ -28,9 +28,9 @@ export default function Navbar() {
           Thank You
         </Link>
 
-        <Link to="/ourstory" onClick={() => setMenuOpen(false)}>
+        {/* <Link to="/ourstory" onClick={() => setMenuOpen(false)}>
           Our Story
-        </Link>
+        </Link> */}
 
         <Link to="/weddingdetails" onClick={() => setMenuOpen(false)}>
           Wedding Details

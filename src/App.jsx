@@ -11,7 +11,7 @@ import Login from "./Components/Login/Login";
 import Navbar from "./Components/Navbar/Navbar";
 import Navigation from "./Components/Navigation/Navigation";
 import ThankYou from "./Components/ThankYou/ThankYou";
-import OurStory from "./Components/OurStory/OurStory";
+// import OurStory from "./Components/OurStory/OurStory";
 import Details from "./Components/Details/Details";
 import Faq from "./Components/Faq/Faq";
 import Rsvp from "./Components/Rsvp/Rsvp";
@@ -33,7 +33,7 @@ function Layout() {
           <Route path="/home" element={<Home />} />
           <Route path="/thankyou" element={<ThankYou />} />
           <Route path="/weddingdetails" element={<Details />} />
-          <Route path="/ourstory" element={<OurStory />} />
+          {/* <Route path="/ourstory" element={<OurStory />} /> */}
           <Route path="/faq" element={<Faq />} />
           <Route path="/rsvp" element={<Rsvp />} />
         </Routes>
