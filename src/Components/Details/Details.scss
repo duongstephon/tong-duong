@@ -9,13 +9,16 @@ p {
   margin: 0;
 }
 
-html,
-body {
-  height: auto;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  min-height: 100%;
-}
+// html,
+// body {
+//   height: auto;
+//   scroll-behavior: smooth;
+//   min-height: 100%;
+// }
+
+// body {
+//   overflow-y: auto;
+// }
 
 @font-face {
   font-family: "Proxima Nova";
