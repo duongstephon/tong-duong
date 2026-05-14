@@ -4,15 +4,6 @@ p {
   margin: 0;
 }
 
-// body {
-//   overflow-y: auto;
-//   -webkit-overflow-scrolling: touch;
-
-//   @include respond-to(tablet) {
-//     overflow: hidden;
-//   }
-// }
-
 @font-face {
   font-family: "Biro Script";
   src: url("../../assets/fonts/Biro_Script_reduced.ttf") format("truetype");
@@ -42,7 +33,7 @@ p {
   align-items: center;
   justify-content: center;
 
-  padding: 2rem 0;
+  padding: 2rem 0 4rem;
 
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
