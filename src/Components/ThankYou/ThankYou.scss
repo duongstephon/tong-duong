@@ -4,6 +4,21 @@ p {
   margin: 0;
 }
 
+html,
+body {
+  margin: 0;
+
+  @include respond-to(tablet) {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  @include respond-to(desktop) {
+    overflow: hidden;
+    height: 100%;
+  }
+}
+
 @font-face {
   font-family: "Biro Script";
   src: url("../../assets/fonts/Biro_Script_reduced.ttf") format("truetype");
@@ -27,7 +42,7 @@ p {
   background-repeat: no-repeat;
 
   width: 100%;
-  min-height: 110svh;
+  min-height: 100svh;
 
   display: flex;
   align-items: center;
@@ -40,6 +55,14 @@ p {
 
   @include respond-to(tablet) {
     height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  @include respond-to(desktop) {
+    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     padding: 0;
   }
@@ -62,19 +85,19 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem 3rem;
-    margin: 2.5rem 1rem;
+    padding: 1rem 2rem 2rem;
+    margin: 2.5rem 1rem 2rem;
     max-width: 900px;
 
     @include respond-to(tablet) {
       max-width: 1500px;
       margin: 4.5rem 2rem;
-      padding: 3rem 2rem;
+      padding: 1rem 2rem 0;
     }
 
     @include respond-to(desktop) {
       max-width: 2000px;
-      margin: 4rem 5rem;
+      margin: 2rem 5rem;
       padding: 4rem 4rem;
     }
   }
