@@ -212,8 +212,8 @@ export default function Rsvp() {
             <p className="rsvp__title">RSVP</p>
 
             <p className="rsvp__description">
-              We're so grateful to have you with us. Your presence means the
-              world.
+              We’re so excited to celebrate with you and so grateful to have you
+              there with us. <span>Please RSVP by August 1, 2026.</span>
             </p>
 
             {guests.map((guest) => {

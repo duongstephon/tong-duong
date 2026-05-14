@@ -10,9 +10,10 @@ export default function Faq() {
         <div className="faq__questions">
           <p className="faq__questions--title">When should I RSVP by?</p>
           <p className="faq__questions--answer">
-            Please RSVP by July 1, 2026. If you’re unable to attend, please let
-            us know as soon as possible by RSVPing “no”. If we do not receive
-            your RSVP by July 1, 2026, we will assume you are unable to attend.
+            Please RSVP by August 1, 2026. If you’re unable to attend, please
+            let us know as soon as possible by RSVPing “no”. If we do not
+            receive your RSVP by August 1, 2026, we will assume you are unable
+            to attend.
           </p>
         </div>
         <div className="faq__questions">
