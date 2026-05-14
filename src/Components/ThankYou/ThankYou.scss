@@ -4,6 +4,14 @@ p {
   margin: 0;
 }
 
+body {
+  overflow-y: auto; // mobile scrollable
+
+  @include respond-to(tablet) {
+    overflow: hidden; // no scroll on tablet+
+  }
+}
+
 @font-face {
   font-family: "Biro Script";
   src: url("../../assets/fonts/Biro_Script_reduced.ttf") format("truetype");
@@ -23,15 +31,17 @@ p {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100vw;
+  width: 100%;
   opacity: 0.75;
   align-items: center;
   display: flex;
   justify-content: space-between;
-  min-height: 100vh;
+  min-height: 100dvh;
   height: auto;
 
   @include respond-to(tablet) {
+    height: 100dvh;
+    min-height: unset;
     overflow: hidden;
   }
 
