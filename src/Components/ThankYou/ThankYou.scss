@@ -27,7 +27,7 @@ p {
   background-repeat: no-repeat;
 
   width: 100%;
-  min-height: 100svh;
+  min-height: 110svh;
 
   display: flex;
   align-items: center;
@@ -38,7 +38,7 @@ p {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  @media (min-width: 768px) and (pointer: fine) {
+  @include respond-to(tablet) {
     height: 100vh;
     overflow: hidden;
     padding: 0;
