@@ -88,7 +88,7 @@ export default function Details() {
       <div className="info">
         <p className="info__title">Wedding Details</p>
         <div className="info__container">
-          <p className="info__subtitle">0.1 DOORS OPEN</p>
+          <p className="info__subtitle">0.1 ARRIVAL</p>
           <div className="info__container--indent">
             <p className="info__time">5:00 PM</p>
             <p className="info__description">
@@ -102,7 +102,7 @@ export default function Details() {
         <div className="info__container">
           <p className="info__subtitle">0.2 CEREMONY</p>
           <div className="info__container--indent">
-            <p className="info__time">5:30 PM</p>
+            <p className="info__time">5:15 PM</p>
             <p className="info__description">
               The ceremony will begin promptly, and once it starts, doors will
               be closed to avoid any interruptions. We kindly ask that you
@@ -135,7 +135,7 @@ export default function Details() {
         <div className="info__container">
           <p className="info__subtitle">0.5 DANCE FLOOR OPENS</p>
           <div className="info__container--indent">
-            <p className="info__time">9:30 PM</p>
+            <p className="info__time">9:00 PM</p>
             <p className="info__description">
               The dance floor is open, the open bar is flowing, the photobooth
               is ready, and there are plenty of late-night bites to keep you

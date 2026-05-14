@@ -64,10 +64,9 @@ p {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      // max-width: 2700px;
       margin: 0 0.5rem;
       padding: 0.5rem 2rem;
-      height: 3vh;
+      height: 5vh;
     }
   }
 
@@ -107,16 +106,19 @@ p {
   }
 
   &__logo {
-    @include respond-to(tablet) {
-      text-align: center;
-      color: #6a6754;
-      font-size: 1.1em;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    @include respond-to(desktop) {
-      text-align: center;
-      color: #6a6754;
-      font-size: 1.5em;
+    @include respond-to(tablet) {
+      width: 100%;
     }
+  }
+
+  &__logo-image {
+    display: block;
+    width: 5rem;
+    height: auto;
+    opacity: 85%;
   }
 }

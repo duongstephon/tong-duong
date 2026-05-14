@@ -1,6 +1,7 @@
 import React from "react";
 import "../../Components/Navigation/Navigation.scss";
 import { Link } from "react-router-dom";
+import weblogo from "../../assets/images/weblogo.png";
 
 export default function Navigation() {
   return (
@@ -10,11 +11,15 @@ export default function Navigation() {
           <Link to="/thankyou">Thank You</Link>
           <Link to="/weddingdetails">Wedding Details</Link>
         </div>
-
         <div className="navigation__logo">
-          <Link to="/home">S+C</Link>
+          <Link to="/home">
+            <img
+              className="navigation__logo-image"
+              src={weblogo}
+              alt="web logo with mountains"
+            />
+          </Link>
         </div>
-
         <div className="navigation__links navigation__links--right">
           {/* <Link to="/ourstory">Our Story</Link> */}
           <Link to="/faq">FAQ</Link>
