@@ -1,28 +1,29 @@
-import React from 'react';
-import '../../Components/Navigation/Navigation.scss'
-import { Link } from 'react-router-dom';
+import React from "react";
+import "../../Components/Navigation/Navigation.scss";
+import { Link } from "react-router-dom";
+import weblogo from "../../assets/images/weblogo.png";
 
 export default function Navigation() {
   return (
     <nav className="navigation">
       <div className="navigation__container">
-        {/* left navigation links */}
         <div className="navigation__links navigation__links--left">
-          {/* <p><a href="#thankyou">Thank You</a></p> */}
-            <Link to="/thankyou">Thank You</Link>
-          <p><a href="#weddingdetails">Wedding Details</a></p>
+          <Link to="/thankyou">Thank You</Link>
+          <Link to="/weddingdetails">Wedding Details</Link>
         </div>
-        {/* logo */}
         <div className="navigation__logo">
-            <Link to="/">S+C</Link>
-            {/* <a href="#home">S+C</a> */}
+          <Link to="/home">
+            <img
+              className="navigation__logo-image"
+              src={weblogo}
+              alt="web logo with mountains"
+            />
+          </Link>
         </div>
-        {/* right navigation links */}
-         <div className="navigation__links navigation__links--right">
-          <Link to="/ourstory">Our Story</Link>
-          {/* <p><a href="#ourstory">Our Story</a></p> */}
-          <p><a href="#faq">FAQ</a></p>
-          <p><a href="#rsvp">RSVP</a></p>
+        <div className="navigation__links navigation__links--right">
+          {/* <Link to="/ourstory">Our Story</Link> */}
+          <Link to="/faq">FAQ</Link>
+          <Link to="/rsvp">RSVP</Link>
         </div>
       </div>
     </nav>

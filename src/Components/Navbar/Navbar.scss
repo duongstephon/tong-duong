@@ -1,112 +1,119 @@
-@use '../../styles/mixins' as *;
+@use "../../styles/mixins" as *;
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 a {
-    text-decoration: none;
-    color: #6A6754;
+  text-decoration: none;
+  color: #6a6754;
 }
 
 @font-face {
-  font-family: 'Biro Script';
-  src: url('../../assets/fonts/Biro_Script_reduced.ttf') format('truetype');
+  font-family: "Biro Script";
+  src: url("../../assets/fonts/Biro_Script_reduced.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Tan Angleton';
-  src: url('../../assets/fonts/TAN-Angleton-Regular.ttf') format('truetype');
+  font-family: "Tan Angleton";
+  src: url("../../assets/fonts/TAN-Angleton-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 .navbar {
+  display: flex;
+  position: fixed;
+  z-index: 10;
+
+  @include respond-to(tablet) {
+    display: none;
+  }
+
+  @include respond-to(desktop) {
+    display: none;
+  }
+
+  &__logo {
+    display: none;
+  }
+
+  &__hamburger {
     display: flex;
-    position: fixed;
-    z-index: 10;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 18px;
+    z-index: 110;
+    margin-top: 30%;
+    margin-left: 20%;
+
+    span {
+      height: 3px;
+      background: #6a6754;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    &.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    &.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
 
     @include respond-to(tablet) {
-        display: none;
+      display: none;
+    }
+  }
+
+  &__welcome,
+  &__menu {
+    color: #6a6754;
+  }
+
+  &__welcome {
+    font-family: "Biro Script", cursive;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    word-break: break-word;
+    white-space: normal;
+
+    p {
+      line-height: 1.4;
+    }
+  }
+
+  &__menu {
+    font-family: "Tan Angleton", Regular;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: #ecece2;
+    padding: 4rem 5rem 10rem 2rem;
+    gap: 1.5rem;
+    transform: translateY(-200%);
+    opacity: 0;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+    z-index: 90;
+
+    &.show {
+      transform: translateY(0);
+      opacity: 1;
     }
 
-    @include respond-to(desktop) {
-        display: none;
+    a {
+      font-size: 0.8rem;
+      white-space: nowrap;
     }
-
-    &__logo {
-        display: none;
-    }
-
-    &__hamburger {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 18px;
-      z-index: 110;
-      margin-top: 30%;
-      margin-left: 20%;
-
-      span {
-        height: 3px;
-        background: #6A6754;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-      }
-
-      &.open span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-
-      &.open span:nth-child(2) {
-        opacity: 0;
-      }
-
-      &.open span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-      }
-
-      @include respond-to(tablet) {
-        display: none;
-      }
-    }
-
-    &__welcome, &__menu {
-        color: #6A6754;
-    }
-
-    &__welcome {
-        font-family: 'Biro Script', cursive;
-        font-size: 1.5rem;
-        white-space: nowrap;
-
-    }
-
-    &__menu {
-      font-family: 'Tan Angleton', Regular;
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      background:#ECECE2;
-      padding: 4rem 5rem 10rem 2rem;
-      gap: 1.5rem;
-      transform: translateY(-200%);
-      opacity: 0;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      z-index: 90;
-
-      &.show {
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      a {
-        font-size: 0.8rem;
-        white-space: nowrap;
-      }
-    }
-    
+  }
 }

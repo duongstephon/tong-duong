@@ -1,0 +1,158 @@
+@use "../../styles/mixins" as *;
+
+p {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+span {
+  text-decoration: underline;
+  font-family: "Proxima Nova";
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../../assets/fonts/proximanova_regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Proxima Nova Light";
+  src: url("../../assets/fonts/proximanova_light.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tan Angleton";
+  src: url("../../assets/fonts/TAN-Angleton-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.faq {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ecece2;
+
+  &__container {
+    background-color: #ecece2;
+    padding: 4rem 2rem;
+
+    @include respond-to(tablet) {
+      padding: 8rem 5rem 6rem;
+    }
+
+    @include respond-to(desktop) {
+      padding: 10rem 12rem;
+    }
+  }
+
+  &__title {
+    font-family: "Tan Angleton";
+    color: #6a6754;
+    font-size: 1.2em;
+    padding-bottom: 1.5rem;
+
+    @include respond-to(tablet) {
+      font-size: 1.4em;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 1.8em;
+      padding-bottom: 2.5rem;
+    }
+  }
+
+  &__questions {
+    padding-bottom: 1.5rem;
+
+    @include respond-to(desktop) {
+      padding-bottom: 2rem;
+    }
+
+    &--title {
+      font-family: "Proxima Nova";
+      font-weight: 700;
+      font-size: 1em;
+      color: #6a6754;
+      letter-spacing: 0.5px;
+      padding-bottom: 0.3rem;
+
+      @include respond-to(tablet) {
+        text-align: left;
+        font-size: 1.2em;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 1.2em;
+      }
+    }
+
+    &--answer {
+      font-family: "Proxima Nova Light";
+      font-size: 0.9em;
+      color: #6a6754;
+      text-align: left;
+      line-height: 20px;
+
+      @include respond-to(tablet) {
+        font-size: 1em;
+        line-height: 25px;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 1.1em;
+        line-height: 28px;
+      }
+    }
+  }
+
+  &__button {
+    background-color: #787351;
+    border: #787351;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-family: "Tan Angleton";
+    font-size: 0.7em;
+    margin-top: 1rem;
+    display: inline-block;
+
+    @include respond-to(tablet) {
+      font-size: 0.7em;
+      padding: 0.6rem 1.3rem;
+      margin-top: 1rem;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 0.7em;
+      padding: 0.6rem 1.4rem;
+    }
+  }
+
+  &__email {
+    font-family: "Proxima Nova Light";
+    font-size: 0.9em;
+    color: #6a6754;
+    line-height: 20px;
+    margin-top: 1.2rem;
+
+    @include respond-to(tablet) {
+      font-size: 1em;
+      margin-top: 1.5rem;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 1.1em;
+      margin-top: 2rem;
+    }
+  }
+}
