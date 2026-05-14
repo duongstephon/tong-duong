@@ -5,10 +5,11 @@ p {
 }
 
 body {
-  overflow-y: auto; // mobile scrollable
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 
   @include respond-to(tablet) {
-    overflow: hidden; // no scroll on tablet+
+    overflow: hidden;
   }
 }
 
