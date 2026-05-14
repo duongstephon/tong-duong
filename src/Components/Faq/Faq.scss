@@ -7,8 +7,11 @@ p {
 html,
 body {
   height: 100%;
-  overflow-y: auto;
   scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: auto;
 }
 
 span {
@@ -39,7 +42,7 @@ span {
 
 .faq {
   width: 100%;
-  min-height: 110vh;
+  min-height: 100%;
   background-color: #ecece2;
 
   &__container {
