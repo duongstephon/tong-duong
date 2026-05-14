@@ -31,11 +31,11 @@ body {
   height: 100vh;
   height: 100dvh;
   background-position: 25% 20%;
-  overflow: hidden;
+  // overflow: hidden;
 
   @include respond-to(desktop) {
     background-position: 25% 25%;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
   &__welcome {
