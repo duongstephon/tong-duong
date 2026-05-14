@@ -154,18 +154,18 @@ body {
 
     &--small {
       font-family: "Proxima Nova Light";
-      font-size: 0.9em;
+      font-size: 1em;
       color: #6a6754;
-      line-height: 16px;
+      line-height: 20px;
 
       @include respond-to(tablet) {
-        font-size: 0.9em;
-        line-height: 20px;
+        font-size: 1em;
+        line-height: 24px;
         padding-top: 0.5rem;
       }
 
       @include respond-to(desktop) {
-        line-height: 22px;
+        line-height: 26px;
         padding-top: 0.5rem;
       }
     }
