@@ -4,14 +4,14 @@ p {
   margin: 0;
 }
 
-body {
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+// body {
+//   overflow-y: auto;
+//   -webkit-overflow-scrolling: touch;
 
-  @include respond-to(tablet) {
-    overflow: hidden;
-  }
-}
+//   @include respond-to(tablet) {
+//     overflow: hidden;
+//   }
+// }
 
 @font-face {
   font-family: "Biro Script";
@@ -28,25 +28,41 @@ body {
 }
 
 .ty {
+  position: relative;
+
   background: url("/images/tyIMG.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
-  opacity: 0.75;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  min-height: 100dvh;
-  height: auto;
 
-  @include respond-to(tablet) {
-    height: 100dvh;
-    min-height: unset;
+  width: 100%;
+  min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem 0;
+
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @media (min-width: 768px) and (pointer: fine) {
+    height: 100vh;
     overflow: hidden;
+    padding: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.25);
+    z-index: 1;
   }
 
   &__container {
+    position: relative;
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 2;
     border-radius: 5px;
