@@ -1,8 +1,8 @@
 import React from "react";
 import "./Home.scss";
 import { Link } from "react-router-dom";
-import heroWebp from "../../../src/assets/images/hero.webp";
-import heroJpg from "../../../src/assets/images/hero.jpg";
+import heroWebp from "../../assets/images/hero.webp";
+import heroJpg from "../../assets/images/hero.jpg";
 
 export default function Home() {
   const guestNames = localStorage.getItem("guestNames") || "Guest";
