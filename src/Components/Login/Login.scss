@@ -52,7 +52,8 @@ input {
     height: 100%;
     width: 100vw;
     opacity: 75%;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
       url("/images/loginIMG.jpg") no-repeat center top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -127,10 +128,7 @@ input {
     width: 80%;
     max-width: 500px;
     text-align: center;
-    // margin-top: -550px;
-    // position: relative;
     left: 50%;
-    // transform: translateX(-50%);
     z-index: 100;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     color: #6a6754;
@@ -141,14 +139,11 @@ input {
     top: 55%;
 
     @include respond-to(tablet) {
-      // margin-top: -500px;
-      // max-width: 500px;
       padding: 7%;
       top: 60%;
     }
 
     @include respond-to(desktop) {
-      // margin-top: -500px;
       max-width: 600px;
       padding: 4%;
       top: 55%;

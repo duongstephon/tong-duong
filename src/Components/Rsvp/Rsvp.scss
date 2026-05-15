@@ -4,24 +4,6 @@ p {
   margin: 0;
 }
 
-// html,
-// body {
-//   height: 100%;
-//   overflow-y: auto;
-//   scroll-behavior: smooth;
-
-//   @include respond-to(desktop) {
-//     overflow: hidden;
-//   }
-// }
-
-@font-face {
-  font-family: "Proxima Nova";
-  src: url("../../assets/fonts/proximanova_regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 @font-face {
   font-family: "Proxima Nova Light";
   src: url("../../assets/fonts/proximanova_light.otf") format("truetype");
@@ -309,7 +291,6 @@ p {
       font-size: 1em;
       padding: 0.6rem 1.2rem;
       margin-top: 0.6rem;
-      // overflow: hidden;
     }
   }
 

@@ -8,11 +8,6 @@ html,
 body {
   margin: 0;
 
-  // @include respond-to(tablet) {
-  //   overflow: hidden;
-  //   height: 100%;
-  // }
-
   @include respond-to(desktop) {
     overflow: hidden;
     height: 100%;
@@ -39,25 +34,14 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   width: 100%;
   min-height: 100svh;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 2rem 0 6rem;
-
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-
-  // @include respond-to(tablet) {
-  //   height: 100vh;
-  //   min-height: 100vh;
-  //   // overflow: hidden;
-  //   padding: 0;
-  // }
 
   @include respond-to(desktop) {
     height: 100vh;
