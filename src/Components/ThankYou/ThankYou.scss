@@ -30,7 +30,7 @@ body {
 
 .ty {
   position: relative;
-  background: url("/images/tyIMG.jpg");
+  background: url("../../assets/images/tyIMG.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -60,7 +60,7 @@ body {
 
   &__container {
     position: relative;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
     z-index: 2;
     border-radius: 5px;
     border: 2px solid #6a6754;
