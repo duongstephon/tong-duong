@@ -35,7 +35,6 @@ body {
 
 .ty {
   position: relative;
-
   background: url("/images/tyIMG.jpg");
   background-size: cover;
   background-position: center;
@@ -53,12 +52,12 @@ body {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  @include respond-to(tablet) {
-    height: 100vh;
-    min-height: 100vh;
-    // overflow: hidden;
-    padding: 0;
-  }
+  // @include respond-to(tablet) {
+  //   height: 100vh;
+  //   min-height: 100vh;
+  //   // overflow: hidden;
+  //   padding: 0;
+  // }
 
   @include respond-to(desktop) {
     height: 100vh;
