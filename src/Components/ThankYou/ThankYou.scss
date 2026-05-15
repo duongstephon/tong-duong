@@ -47,30 +47,6 @@ body {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   background: none;
-  // position: relative;
-  // background: url("../../assets/images/ty.jpg");
-  // background-size: cover;
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // width: 100%;
-  // min-height: 90svh;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // padding: 1rem 0 12rem;
-  // overflow-y: auto;
-  // -webkit-overflow-scrolling: touch;
-
-  // @include respond-to(tablet) {
-  //   padding-top: 3rem;
-  // }
-
-  // @include respond-to(desktop) {
-  //   height: 100vh;
-  //   min-height: 100svh;
-  //   overflow: hidden;
-  //   padding: 2rem 0 0;
-  // }
 
   &::before {
     content: "";
