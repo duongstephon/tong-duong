@@ -48,6 +48,14 @@ body {
   -webkit-overflow-scrolling: touch;
   background: none;
 
+  @include respond-to(tablet) {
+    padding-top: 4rem;
+  }
+
+  @include respond-to(desktop) {
+    padding-top: 5rem;
+  }
+
   &::before {
     content: "";
     position: absolute;
