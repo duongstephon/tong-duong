@@ -1,9 +1,11 @@
 import React from "react";
 import "./ThankYou.scss";
+import ty from "../../assets/images/ty.jpg";
 
 export default function ThankYou() {
   return (
     <div className="ty">
+      <img className="ty__bg" src={ty} alt="" />
       <div className="ty__container">
         <div className="ty__box">
           <p className="ty__ff">Dear Family and Friends,</p>
