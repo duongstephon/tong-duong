@@ -8,10 +8,10 @@ html,
 body {
   margin: 0;
 
-  @include respond-to(tablet) {
-    overflow: hidden;
-    height: 100%;
-  }
+  // @include respond-to(tablet) {
+  //   overflow: hidden;
+  //   height: 100%;
+  // }
 
   @include respond-to(desktop) {
     overflow: hidden;
