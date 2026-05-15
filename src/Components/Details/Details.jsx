@@ -4,6 +4,7 @@ import "./Details.scss";
 import details from "../../assets/images/details.jpg";
 
 export default function Details() {
+  const isLoggedIn = localStorage.getItem("guestEmail");
   return (
     <>
       <div className="details">
@@ -23,36 +24,40 @@ export default function Details() {
             </p>
           </div>
           <div className="details__section">
-            <div className="details__row">
-              <p className="details__subtitle">WHEN</p>
-              <p className="details__description">
-                Sunday, September 6, 2026 at 5:00 PM
-              </p>
-            </div>
+            {isLoggedIn && (
+              <>
+                <div className="details__row">
+                  <p className="details__subtitle">WHEN</p>
+                  <p className="details__description">
+                    Sunday, September 6, 2026 at 5:00 PM
+                  </p>
+                </div>
 
-            <div className="details__row">
-              <p className="details__subtitle">WHERE</p>
-              <a
-                href="https://www.google.com/maps/place/Village+Loft/@43.7678383,-79.3853813,17z/data=!3m1!4b1!4m6!3m5!1s0x882b2d028bc2ef35:0x45b75cbbe45febef!8m2!3d43.7678383!4d-79.3853813!16s%2Fg%2F11f7bqwqh9?entry=ttu&g_ep=EgoyMDI2MDQyMC4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <p className="details__description">Village Loft</p>
-              </a>
-            </div>
+                <div className="details__row">
+                  <p className="details__subtitle">WHERE</p>
+                  <a
+                    href="https://www.google.com/maps/place/Village+Loft/@43.7678383,-79.3853813,17z/data=!3m1!4b1!4m6!3m5!1s0x882b2d028bc2ef35:0x45b75cbbe45febef!8m2!3d43.7678383!4d-79.3853813!16s%2Fg%2F11f7bqwqh9?entry=ttu&g_ep=EgoyMDI2MDQyMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <p className="details__description">Village Loft</p>
+                  </a>
+                </div>
 
-            <div className="details__row">
-              <p className="details__subtitle">ADDRESS</p>
-              <a
-                href="https://www.google.com/maps/place/Village+Loft/@43.7678383,-79.3853813,17z/data=!3m1!4b1!4m6!3m5!1s0x882b2d028bc2ef35:0x45b75cbbe45febef!8m2!3d43.7678383!4d-79.3853813!16s%2Fg%2F11f7bqwqh9?entry=ttu&g_ep=EgoyMDI2MDQyMC4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <p className="details__description">
-                  2901 Bayview Ave, North York, ON M2K 1E6
-                </p>
-              </a>
-            </div>
+                <div className="details__row">
+                  <p className="details__subtitle">ADDRESS</p>
+                  <a
+                    href="https://www.google.com/maps/place/Village+Loft/@43.7678383,-79.3853813,17z/data=!3m1!4b1!4m6!3m5!1s0x882b2d028bc2ef35:0x45b75cbbe45febef!8m2!3d43.7678383!4d-79.3853813!16s%2Fg%2F11f7bqwqh9?entry=ttu&g_ep=EgoyMDI2MDQyMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <p className="details__description">
+                      2901 Bayview Ave, North York, ON M2K 1E6
+                    </p>
+                  </a>
+                </div>
+              </>
+            )}
 
             <div className="details__row">
               <p className="details__subtitle">PARKING</p>
