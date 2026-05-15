@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./Rsvp.scss";
 import { db } from "../../config/firebase-config";
+import rsvp from "../../assets/images/rsvp.jpg";
 import {
   collection,
   query,
@@ -174,6 +175,7 @@ export default function Rsvp() {
 
   return (
     <div className="rsvp">
+      <img className="rsvp__bg" src={rsvp} alt="rsvp background photo" />
       <div className="rsvp__container">
         {submitted ? (
           <div className="rsvp__confirmation">
