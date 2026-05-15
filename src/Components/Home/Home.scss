@@ -27,13 +27,16 @@ body {
 
 .home {
   background-attachment: scroll;
-  // -webkit-transform: translate3d(0, 0, 0);
-  // transform: translate3d(0, 0, 0);
-  // will-change: transform;
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(rgba(255, 255, 255, 0.5)), url("/images/hero.JPG");
+    linear-gradient(rgba(255, 255, 255, 0.5)),
+    image-set(
+      url("public/images/hero.webp") type("image/webp"),
+      url("public/images/hero.JPG") type("image/jpeg")
+    );
+  // background:
+  //   linear-gradient(rgba(255, 255, 255, 0.5)), url("/public/images/hero.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 25% 20%;
@@ -79,11 +82,11 @@ body {
     color: white;
     position: absolute;
     inset: 0;
-    margin-top: 20rem;
-    display: row;
     justify-content: center;
     align-items: center;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 
     @include respond-to(desktop) {
       inset: 0;
