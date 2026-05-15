@@ -93,9 +93,8 @@ export default function Details() {
             <p className="info__time">5:00 PM</p>
             <p className="info__description">
               The doors are open! Get comfortable, chat with friends and family,
-              and soak in the excitement before the big moment. Find your seat,
-              and get ready for a ceremony filled with love and joy. The
-              ceremony will begin shortly.
+              and soak in the excitement before the big moment. Find your seat.
+              The ceremony will begin shortly.
             </p>
           </div>
         </div>
@@ -104,10 +103,10 @@ export default function Details() {
           <div className="info__container--indent">
             <p className="info__time">5:15 PM</p>
             <p className="info__description">
-              The ceremony will begin promptly, and once it starts, doors will
-              be closed to avoid any interruptions. We kindly ask that you
-              arrive on time and silence and put away all phones so everyone can
-              be fully present for this special moment.
+              The ceremony will begin shortly, and once it starts, doors will be
+              closed to avoid any interruptions. We kindly ask that you arrive
+              on time and silence and put away all phones so everyone can be
+              fully present for this special moment.
             </p>
           </div>
         </div>
@@ -128,7 +127,7 @@ export default function Details() {
             <p className="info__time">7:15 PM</p>
             <p className="info__description">
               Join us for dinner, speeches, and a relaxed evening with the
-              people we love as we continue the celebration together.
+              people we love.
             </p>
           </div>
         </div>
@@ -151,15 +150,11 @@ export default function Details() {
               As the evening draws to a close, we want to take a moment to thank
               each and every one of you for sharing our special day with us.
               Your love and support mean the world to us. We’ll be saying our
-              goodbyes with warm hugs and heartfelt smiles, and we couldn’t be
-              more grateful to have you all with us on this unforgettable
-              journey.
+              goodbyes and we couldn’t be more grateful to have you all with us
+              today.
             </p>
           </div>
         </div>
-        {/* <div className="info__back">
-          <p>BACK TO TOP</p>
-        </div> */}
       </div>
     </>
   );
