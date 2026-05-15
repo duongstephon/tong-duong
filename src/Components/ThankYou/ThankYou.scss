@@ -35,19 +35,23 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  min-height: 100svh;
+  min-height: 90svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0 6rem;
+  padding: 1rem 0 12rem;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
+  @include respond-to(tablet) {
+    padding-top: 3rem;
+  }
+
   @include respond-to(desktop) {
     height: 100vh;
-    min-height: 100vh;
+    min-height: 100svh;
     overflow: hidden;
-    padding: 0;
+    padding: 2rem 0 0;
   }
 
   &::before {
@@ -68,19 +72,20 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem 2rem;
-    margin: 2.5rem 1rem 2rem;
+    padding: 2rem 2rem 2.5rem;
+    margin: 3rem 1rem 2rem;
     max-width: 900px;
+    min-height: 60svh;
 
     @include respond-to(tablet) {
       max-width: 1500px;
       margin: 4.5rem 2rem;
-      padding: 1rem 2rem 0;
+      padding: 1rem 2rem;
     }
 
     @include respond-to(desktop) {
       max-width: 2000px;
-      margin: 2rem 5rem;
+      margin: 2rem 5rem 1rem;
       padding: 4rem 4rem;
     }
   }

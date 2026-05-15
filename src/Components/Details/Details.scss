@@ -219,6 +219,10 @@ p {
       opacity: 0.75;
       display: block;
       margin-left: 2rem;
+
+      @include respond-to(tablet) {
+        display: none;
+      }
     }
   }
 
