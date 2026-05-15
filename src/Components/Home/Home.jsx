@@ -12,7 +12,7 @@ export default function Home() {
     <div className="home">
       <picture className="home__picture">
         <source srcSet={heroWebp} type="image/webp" />
-        <img src={heroJpg} alt="hero background" className="home__bg" />
+        <img src={heroJpg} alt="home background" className="home__bg" />
       </picture>
       <div className="home__welcome">
         {isLoggedIn ? (

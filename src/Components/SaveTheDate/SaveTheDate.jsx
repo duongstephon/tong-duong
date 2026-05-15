@@ -3,7 +3,7 @@ import "../../Components/SaveTheDate/SaveTheDate.scss";
 import { useParams } from "react-router-dom";
 import { db } from "../../config/firebase-config";
 import { collection, query, where, getDocs } from "firebase/firestore";
-import SaveTheDateImg from "../../assets/images/saveTheDateIMG.jpg";
+import SaveTheDateImg from "../../assets/images/savethedateimg.jpg";
 
 export default function SaveTheDate() {
   const { email } = useParams();
