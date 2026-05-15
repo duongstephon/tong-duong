@@ -1,6 +1,8 @@
 import React from "react";
 import "./Home.scss";
 import { Link } from "react-router-dom";
+import heroWebp from "../../assets/images/hero.webp";
+import heroJpg from "../../assets/images/hero.jpg";
 
 export default function Home() {
   const guestNames = localStorage.getItem("guestNames") || "Guest";
@@ -8,6 +10,10 @@ export default function Home() {
 
   return (
     <div className="home">
+      <picture className="home__picture">
+        <source srcSet={heroWebp} type="image/webp" />
+        <img src={heroJpg} alt="hero background" className="home__bg" />
+      </picture>
       <div className="home__welcome">
         {isLoggedIn ? (
           <p>Welcome, {guestNames}</p>
