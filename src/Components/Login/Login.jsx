@@ -1,6 +1,7 @@
 import React from "react";
 import "./Login.scss";
 import { useState } from "react";
+import login from "../../assets/images/ty.jpg";
 import { db } from "../../config/firebase-config";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
@@ -61,6 +62,7 @@ export default function Login() {
   return (
     <div className="login">
       <div className="login__container">
+        <img className="login__bg" src={login} alt="" />
         <div className="login__sc">
           <p className="login__names">Stephon & Chelsia</p>
           <p className="login__announcement">ARE GETTING MARRIED!</p>

@@ -44,6 +44,14 @@ input {
   font-style: normal;
 }
 
+.login__container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
 .login {
   font-family: "Tan Angleton", Regular;
   height: 100vh;
@@ -52,21 +60,37 @@ input {
     height: 100%;
     width: 100vw;
     opacity: 75%;
-    background:
-      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url("../../assets/images/tyimg.jpg") no-repeat center top;
-    background-size: cover;
-    background-repeat: no-repeat;
     background-color: black;
     border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    // height: 100%;
+    // width: 100vw;
+    // opacity: 75%;
+    // background:
+    //   linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    //   url("../../assets/images/ty.jpg") no-repeat center top;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-color: black;
+    // border-radius: 0;
 
-    @include respond-to(tablet) {
-      background-position: center;
-    }
+    // @include respond-to(tablet) {
+    //   background-position: center;
+    // }
 
-    @include respond-to(desktop) {
-      background-position: center;
-    }
+    // @include respond-to(desktop) {
+    //   background-position: center;
+    // }
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
   }
 
   &__sc,
@@ -80,6 +104,8 @@ input {
   &__sc {
     padding-top: 10vh;
     color: white;
+    position: relative;
+    z-index: 2;
 
     @include respond-to(tablet) {
       padding-top: 15vh;
