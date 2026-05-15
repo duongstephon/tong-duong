@@ -38,6 +38,7 @@ body {
   min-height: 100vh;
   overflow: hidden;
   isolation: isolate;
+  background-color: #9ea694; //backup background
 
   &__picture {
     position: absolute;
