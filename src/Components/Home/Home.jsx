@@ -28,14 +28,6 @@ export default function Home() {
         <p className="home__names">Stephon & Chelsia</p>
         <p className="home__announcement">ARE GETTING MARRIED!</p>
       </div>
-      {/* {isLoggedIn && (
-        <div className="home__location-time">
-          <p>
-            NORTH YORK, ONTARIO <br />
-            SUNDAY, SEPTEMBER 6, 2026
-          </p>
-        </div>
-      )} */}
     </div>
   );
 }

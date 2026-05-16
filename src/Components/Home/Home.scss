@@ -138,25 +138,4 @@ body {
       font-size: clamp(1.2rem, 1.5vw, 2rem);
     }
   }
-
-  // &__location-time {
-  //   font-family: "Tan Angleton";
-  //   color: white;
-  //   position: absolute;
-  //   bottom: 6%;
-  //   left: 50%;
-  //   transform: translateX(-50%);
-  //   text-align: center;
-  //   font-size: 0.8rem;
-  //   width: 100%;
-
-  //   @include respond-to(tablet) {
-  //     font-size: 1rem;
-  //   }
-
-  //   @include respond-to(desktop) {
-  //     font-size: clamp(1.1rem, 1.4vw, 1.8rem);
-  //     padding-bottom: 3%;
-  //   }
-  // }
 }

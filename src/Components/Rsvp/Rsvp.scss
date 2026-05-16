@@ -26,7 +26,7 @@ p {
   min-height: 100vh;
   height: auto;
   background-position: 25% 20%;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 
   @include respond-to(tablet) {
     padding-bottom: 1rem;
@@ -325,10 +325,12 @@ p {
   &__guest {
     padding-bottom: 2rem;
     border-bottom: 1px solid #6a675430;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     &:last-of-type {
       border-bottom: none;
+      padding-bottom: 0.5rem;
+      margin: 0;
     }
   }
 }
