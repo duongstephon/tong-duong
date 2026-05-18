@@ -14,7 +14,8 @@ export default function Login() {
   const getUsersByEmail = async (e) => {
     e.preventDefault();
     try {
-      const q = query(usersCollectionRef, where("email", "==", email));
+      let emailCheck = email.toLocaleLowerCase();
+      const q = query(usersCollectionRef, where("email", "==", emailCheck));
       const data = await getDocs(q);
 
       const userData = data.docs.map((doc) => ({
