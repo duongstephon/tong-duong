@@ -27,7 +27,7 @@ export default function Rsvp() {
 
   useEffect(() => {
     const fetchGuests = async () => {
-      const email = localStorage.getItem("guestEmail");
+      const email = localStorage.getItem("guestEmail").toLocaleLowerCase();
 
       try {
         const q = query(collection(db, "Users"), where("email", "==", email));

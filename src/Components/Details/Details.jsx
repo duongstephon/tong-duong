@@ -4,7 +4,7 @@ import "./Details.scss";
 import details from "../../assets/images/details.jpg";
 
 export default function Details() {
-  const isLoggedIn = localStorage.getItem("guestEmail");
+  const isLoggedIn = localStorage.getItem("guestEmail").toLocaleLowerCase();
   return (
     <>
       <div className="details">

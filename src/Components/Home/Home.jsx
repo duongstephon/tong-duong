@@ -6,7 +6,7 @@ import heroJpg from "../../assets/images/hero.jpg";
 
 export default function Home() {
   const guestNames = localStorage.getItem("guestNames") || "Guest";
-  const isLoggedIn = localStorage.getItem("guestEmail");
+  const isLoggedIn = localStorage.getItem("guestEmail").toLocaleLowerCase();
 
   return (
     <div className="home">

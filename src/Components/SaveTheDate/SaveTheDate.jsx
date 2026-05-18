@@ -15,6 +15,7 @@ export default function SaveTheDate() {
   useEffect(() => {
     const getUsersByEmail = async () => {
       try {
+        const email = decodedEmail.toLocaleLowerCase();
         const q = query(usersCollectionRef, where("email", "==", decodedEmail));
         const data = await getDocs(q);
         const userData = data.docs.map((doc) => ({
