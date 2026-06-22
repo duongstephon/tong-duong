@@ -6,8 +6,7 @@ import heroJpg from "../../assets/images/hero.jpg";
 
 export default function Home() {
   const guestNames = localStorage.getItem("guestNames") || "Guest";
-  const isLoggedIn = localStorage.getItem("guestEmail").toLocaleLowerCase();
-
+  const isLoggedIn = localStorage.getItem("guestEmail")?.toLocaleLowerCase();
   return (
     <div className="home">
       <picture className="home__picture">
@@ -28,7 +27,11 @@ export default function Home() {
         <div className="home__sc">
           <p className="home__names">Stephon & Chelsia</p>
           <p className="home__announcement">ARE GETTING MARRIED!</p>
+          <Link to="/rsvp" className="home__button">
+            RSVP NOW
+          </Link>
         </div>
+
         {isLoggedIn && (
           <div className="home__location-time">
             <p>

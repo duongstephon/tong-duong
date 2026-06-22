@@ -176,4 +176,27 @@ body {
       transform: translateX(-50%);
     }
   }
+
+  &__button {
+    background-color: #787351;
+    border: #787351;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-family: "Tan Angleton";
+    font-size: 0.7em;
+    position: relative;
+    z-index: 2;
+    margin-top: 1.5rem;
+
+    @include respond-to(tablet) {
+      font-size: 0.9em;
+      padding: 0.6rem 1.3rem;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 0.9em;
+      padding: 0.6rem 1.4rem;
+    }
+  }
 }
