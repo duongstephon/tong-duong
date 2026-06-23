@@ -71,9 +71,9 @@ export default function Details() {
                 <p className="details__description--small">
                   Men should wear a suit with a white dress shirt, a tie
                   (optional), and formal shoes. A tuxedo is not required. Women
-                  can opt for a floor-length gown, cocktail dress, or formal
-                  jumpsuit, paired with dressy heels or flats. We kindly ask our
-                  female guests to steer clear of white and yellow.
+                  can opt for a floor-length gown or formal jumpsuit, paired
+                  with dressy heels or flats. We kindly ask our female guests to
+                  steer clear of white and yellow.
                 </p>
               </div>
             </div>
