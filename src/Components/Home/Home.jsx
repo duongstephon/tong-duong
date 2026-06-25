@@ -40,6 +40,8 @@ export default function Home() {
               </a>
               <br />
               SUNDAY, SEPTEMBER 6, 2026
+              <br />
+              5:00 PM
             </p>
           </div>
         )}
