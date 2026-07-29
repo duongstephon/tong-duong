@@ -98,8 +98,7 @@ export default function Details() {
             <p className="info__time">5:00 PM</p>
             <p className="info__description">
               The doors are open! Get comfortable, chat with friends and family,
-              and soak in the excitement before the big moment. Find your seat.
-              The ceremony will begin shortly.
+              and soak in the excitement before the big moment.
             </p>
           </div>
         </div>
@@ -116,22 +115,22 @@ export default function Details() {
           </div>
         </div>
         <div className="info__container">
-          <p className="info__subtitle">0.3 COCKTAIL HOUR</p>
+          <p className="info__subtitle">0.3 COCKTAIL HOUR AND GROUP PHOTOS</p>
           <div className="info__container--indent">
             <p className="info__time">6:00 PM</p>
             <p className="info__description">
-              Cocktail hour has started, with drinks and light bites available.
-              Please help yourself and take a moment to relax and enjoy the
-              start of the evening.
+              Drinks and light bites are officially open! Please grab a
+              refreshment, mingle, and stick around the area as we’ll be
+              snapping group photos during cocktail hour.
             </p>
           </div>
         </div>
         <div className="info__container">
           <p className="info__subtitle">0.4 RECEPTION</p>
           <div className="info__container--indent">
-            <p className="info__time">7:15 PM</p>
+            <p className="info__time">7:30 PM</p>
             <p className="info__description">
-              Join us for dinner, speeches, and a relaxed evening with the
+              Join us for dinner, speeches, games and a relaxed evening with the
               people we love.
             </p>
           </div>
@@ -139,7 +138,7 @@ export default function Details() {
         <div className="info__container">
           <p className="info__subtitle">0.5 DANCE FLOOR OPENS</p>
           <div className="info__container--indent">
-            <p className="info__time">9:00 PM</p>
+            <p className="info__time">9:30 PM</p>
             <p className="info__description">
               The dance floor is open, the open bar is flowing, the photobooth
               is ready, and there are plenty of late-night bites to keep you
@@ -150,7 +149,7 @@ export default function Details() {
         <div className="info__container">
           <p className="info__subtitle">0.6 FAREWELL</p>
           <div className="info__container--indent">
-            <p className="info__time">1:00 AM</p>
+            <p className="info__time">12:45 AM</p>
             <p className="info__description">
               As the evening draws to a close, we want to take a moment to thank
               each and every one of you for sharing our special day with us.
